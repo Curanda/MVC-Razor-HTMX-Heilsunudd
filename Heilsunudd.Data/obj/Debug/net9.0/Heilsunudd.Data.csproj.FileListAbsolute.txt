@@ -1,0 +1,11 @@
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/bin/Debug/net9.0/Heilsunudd.Data.deps.json
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/bin/Debug/net9.0/Heilsunudd.Data.dll
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/bin/Debug/net9.0/Heilsunudd.Data.pdb
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.AssemblyInfoInputs.cache
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.AssemblyInfo.cs
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.csproj.CoreCompileInputs.cache
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.dll
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/refint/Heilsunudd.Data.dll
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/Heilsunudd.Data.pdb
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Data/obj/Debug/net9.0/ref/Heilsunudd.Data.dll

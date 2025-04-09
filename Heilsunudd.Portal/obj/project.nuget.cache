@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "oLIYXDFx55c=",
+  "success": true,
+  "projectFilePath": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Heilsunudd.Portal.csproj",
+  "expectedPackageFiles": [
+    "/Users/mac/.nuget/packages/litedb/5.0.21/litedb.5.0.21.nupkg.sha512",
+    "/Users/mac/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512"
+  ],
+  "logs": []
+}

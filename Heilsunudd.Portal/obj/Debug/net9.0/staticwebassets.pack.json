@@ -1,0 +1,361 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/scopedcss/projectbundle/Heilsunudd.Portal.bundle.scp.css",
+      "PackagePath": "staticwebassets/Heilsunudd.Portal.eyhzhgbz3p.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/css/output.css",
+      "PackagePath": "staticwebassets/css/output.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/favicon.ico",
+      "PackagePath": "staticwebassets/favicon.ico"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/js/site.js",
+      "PackagePath": "staticwebassets/js/site.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.slim.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/dist/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/bg2.png",
+      "PackagePath": "staticwebassets/public/bg2.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/centerpiece.png",
+      "PackagePath": "staticwebassets/public/centerpiece.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/droplet-animation.gif",
+      "PackagePath": "staticwebassets/public/droplet-animation.gif"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/droplet-animation.mov",
+      "PackagePath": "staticwebassets/public/droplet-animation.mov"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/droplet-animation.webm",
+      "PackagePath": "staticwebassets/public/droplet-animation.webm"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/droplet.json",
+      "PackagePath": "staticwebassets/public/droplet.json"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/duck--.png",
+      "PackagePath": "staticwebassets/public/duck--.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/grill-bottom.png",
+      "PackagePath": "staticwebassets/public/grill-bottom.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/grill-dotted.svg",
+      "PackagePath": "staticwebassets/public/grill-dotted.svg"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/grill-top.png",
+      "PackagePath": "staticwebassets/public/grill-top.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/grill-top2.png",
+      "PackagePath": "staticwebassets/public/grill-top2.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/grill-top3.svg",
+      "PackagePath": "staticwebassets/public/grill-top3.svg"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/himbrimi.png",
+      "PackagePath": "staticwebassets/public/himbrimi.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/himbrimi2.png",
+      "PackagePath": "staticwebassets/public/himbrimi2.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/himbrimi3.png",
+      "PackagePath": "staticwebassets/public/himbrimi3.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/img-hero.png",
+      "PackagePath": "staticwebassets/public/img-hero.png"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/spinner.gif",
+      "PackagePath": "staticwebassets/public/spinner.gif"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/spinner.svg",
+      "PackagePath": "staticwebassets/public/spinner.svg"
+    },
+    {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/text-card-massage1.jpg",
+      "PackagePath": "staticwebassets/public/text-card-massage1.jpg"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Heilsunudd.Portal.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.Heilsunudd.Portal.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.build.Heilsunudd.Portal.props",
+      "PackagePath": "build\\Heilsunudd.Portal.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildMultiTargeting.Heilsunudd.Portal.props",
+      "PackagePath": "buildMultiTargeting\\Heilsunudd.Portal.props"
+    },
+    {
+      "Id": "obj/Debug/net9.0/staticwebassets/msbuild.buildTransitive.Heilsunudd.Portal.props",
+      "PackagePath": "buildTransitive\\Heilsunudd.Portal.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

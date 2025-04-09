@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.font-inika {
+  font-family: "Inika", serif !important;
+}

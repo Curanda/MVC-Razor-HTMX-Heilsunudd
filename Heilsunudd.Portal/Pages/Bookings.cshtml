@@ -1,0 +1,58 @@
+@page
+@model BookingsModel
+@{
+    ViewData["Title"] = "Bookings";
+}
+
+<section id="Bookings"
+    class="flex flex-row justify-center mx-auto h-3/5 w-3/5">
+        <div class="flex flex-col gap-12 mt-10">
+          <button
+            class="bg-[#D3DDE5] text-black px-6 py-4 rounded-lg rounded-r-none font-inika text-nowrap tracking-widest text-2xl hover:bg-[#C1C1C1] hover:text-black hover:scale-105 transition-all duration-300 ease-in outline-2 outline-offset-2 outline-dotted active:bg-[#C1C1C1]"
+            id="hafnarfjordur-button">Hafnarfjordur</button>
+          <button
+            class="bg-[#D3DDE5] text-black px-6 py-4 rounded-lg rounded-r-none font-inika text-nowrap tracking-widest text-2xl hover:bg-[#C1C1C1] hover:text-black hover:scale-105 transition-all duration-300 ease-in outline-2 outline-offset-2 outline-dotted active:bg-[#C1C1C1]"
+            id="vogar-button">Vogar</button>
+        </div>
+    <div id="BookingsCard"
+        class="w-full h-full bg-gray-50 border-2 border-white mx-auto rounded-lg brightness-75 contrast-200 outline-2 outline-white outline-offset-2 outline-dotted overflow-y-scroll flex flex-col">
+        <div id="BookingsCardHeader" class="w-full p-6 bg-white text-xl">Choose massage</div>
+        <div id="BookingsCardList" class="flex flex-col m-2 gap-3">
+            <div id="BookingsCardListItem1" class="flex flex-row items-center bg-gray-200 rounded-md p-3 gap-4 hover:bg-[#C1C1C1] hover:text-black hover:scale-99 transition-all duration-300 ease-in">
+                <span title="ServiceIcon" class="max-w-1/20 px-4 py-2 text-2xl m-auto rounded-md bg-gray-100">C</span>
+                <div id="BookingsCardServiceListDetails" class="flex flex-col gap-3">
+                    <h3 title="ServiceName" class="text-lg">Classic Masssage</h3>
+                    <div title="ServiceDetails" class="flex flex-row items-start gap-2">
+                        <p>60 min</p>
+                        <span>*</span>
+                        <p>13,000 kr.</p>
+                    </div>
+                    <p title="ServiceDescription">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vero, vitae quisquam veniam dolores aperiam magnam sequi ex fugit veritatis corrupti placeat quos maiores sunt at impedit earum! Libero, porro!
+                    </p>
+                </div>
+                <button>
+                    <span title="ServiceChevron" class="text-2xl">></span>
+                </button>
+            </div>
+         
+            <div id="BookingsCardListItem2" class="flex flex-row items-center bg-gray-200 rounded-md p-3 gap-4 hover:bg-[#C1C1C1] hover:text-black hover:scale-99 transition-all duration-300 ease-in">
+                <span title="ServiceIcon" class="max-w-1/20 px-4 py-2 text-2xl m-auto rounded-md bg-gray-100">S</span>
+                <div id="BookingsCardServiceListDetails" class="flex flex-col gap-3">
+                    <h3 title="ServiceName" class="text-lg">Sports Masssage</h3>
+                    <div title="ServiceDetails" class="flex flex-row items-start gap-2">
+                        <p>40 min</p>
+                        <span>*</span>
+                        <p>10,000 kr.</p>
+                    </div>
+                    <p title="ServiceDescription">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit vero, vitae quisquam veniam dolores aperiam magnam sequi ex fugit veritatis corrupti placeat quos maiores sunt at impedit earum! Libero, porro!
+                    </p>
+                </div>
+                <button hx-target="#BookingsCardList">
+                    <span title="ServiceChevron" class="text-2xl">></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

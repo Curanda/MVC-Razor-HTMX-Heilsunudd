@@ -1,0 +1,25 @@
+@page
+@model AboutUsModel
+@{
+    ViewData["Title"] = "About Us";
+}
+
+<section
+      id="AboutUs"
+      class="flex flex-col items-center justify-between mx-auto gap-10 h-3/5 w-3/5"
+    >
+      <div class="flex flex-row items-center justify-center gap-4 text-black">
+        <span class="text-lg font-inika">●</span>
+        <h1 class="text-4xl font-inika">About us</h1>
+        <span class="text-lg font-inika">●</span>
+      </div>
+        <div class="flex flex-row justify-between gap-50 max-h-4/5 m-auto" id="intro">
+            <div class="m-auto">
+                <div class="rounded-lg bg-gray-100 p-7 flex flex-col justify-evenly gap-5 h-auto outline-3 outline-offset-5 outline-dotted outline-white" id="textCard">
+                    <h3 class="text-xl">Our core value is healing</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore, ducimus quam! Consectetur quaerat laborum, vitae quod ab magni facere voluptatem architecto molestiae a, in odio eos est perferendis. Facilis, quam.</p>
+                </div>
+            </div>
+            <img class="opacity-75 outline-2 outline-offset-3 outline-soli rounded-xl" src="public/text-card-massage1.jpg"/>
+        </div>
+    </section>

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Heilsunudd.Data\Heilsunudd.Data.csproj" Type="Classic C#" />
+  <Project Path="Heilsunudd.Intranet\Heilsunudd.Intranet.csproj" Type="Classic C#" />
+  <Project Path="Heilsunudd.Portal\Heilsunudd.Portal.csproj" />
+</Solution>
