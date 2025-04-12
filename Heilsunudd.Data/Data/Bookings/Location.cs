@@ -54,7 +54,8 @@ public class Location
     [MaxLength(200, ErrorMessage = "Location image URL can't be longer than 200 characters")]
     [Column(TypeName = "varchar(200)")]
     [Display(Name = "Location image URL")]
-    public required UrlAttribute LocationImageUrl { get; set; }
+    [Url(ErrorMessage = "Invalid URL format")]
+    public required string LocationImageUrl { get; set; }
     
     [Display(Name = "Activate location?")]
     [Required(ErrorMessage = "You must specify if the location is active")]

@@ -1,4 +1,4 @@
-namespace HeilsunuddIntranet.Models;
+namespace Heilsunudd.Intranet.Models;
 
 public class ErrorViewModel
 {

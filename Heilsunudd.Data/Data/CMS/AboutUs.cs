@@ -6,6 +6,7 @@ namespace Heilsunudd.Data.Data.CMS;
 public class AboutUs
 {
     [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int IdAboutUs { get; set; }
     
     [Required(ErrorMessage = "Title is required")]
@@ -23,10 +24,9 @@ public class AboutUs
     [Required(ErrorMessage = "Image URL is required")]
     [MaxLength(200, ErrorMessage = "Image URL can contain up to 200 characters")]
     [Display(Name = "Image URL")]
-    [DataType(DataType.ImageUrl)]
     [Url(ErrorMessage = "Invalid URL format")]
     [Column(TypeName = "nvarchar(200)")]
-    public required UrlAttribute ImageUrl { get; set; }
+    public required string ImageUrl { get; set; }
     
     [Required(ErrorMessage = "Position is required")]
     [Display(Name = "Position on website")]

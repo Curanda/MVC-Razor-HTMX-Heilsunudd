@@ -1,0 +1,66 @@
+@model IEnumerable<Heilsunudd.Data.Data.Bookings.AvailableService>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceIsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceIsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdService">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdService">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdService">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

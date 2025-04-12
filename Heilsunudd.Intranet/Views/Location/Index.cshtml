@@ -1,0 +1,84 @@
+@model IEnumerable<Heilsunudd.Data.Data.Bookings.Location>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationTown)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationStreet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationHouseNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationAdditionalInfo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationCoordinates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationIsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationTown)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationStreet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationHouseNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationAdditionalInfo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationCoordinates)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationIsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdLocation">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdLocation">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdLocation">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

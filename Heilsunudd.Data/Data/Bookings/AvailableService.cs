@@ -32,6 +32,7 @@ public class AvailableService
     [Required(ErrorMessage = "Please provide service image URL")]
     [MaxLength(200, ErrorMessage = "Service image URL can contain up to 200 characters")]
     [Display(Name = "Service image URL")]
+    [Url(ErrorMessage = "Invalid URL format")]
     public required string ServiceImageUrl { get; set; }
     
     [Required(ErrorMessage = "Please specify if the service is active")]

@@ -48,6 +48,10 @@
             "LiteDB": {
               "target": "Package",
               "version": "[5.0.21, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [

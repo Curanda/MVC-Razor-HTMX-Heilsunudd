@@ -1,0 +1,54 @@
+@model List<Heilsunudd.Data.Data.CMS.AboutUs>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().Position)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdAboutUs">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdAboutUs">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdAboutUs">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

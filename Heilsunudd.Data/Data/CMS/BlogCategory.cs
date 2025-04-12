@@ -14,4 +14,7 @@ public class BlogCategory
     [Display(Name = "Category name")]
     [Column(TypeName = "nvarchar(50)")]
     public required string CategoryName { get; set; }
+    
+    
+    public virtual ICollection<BlogPost> BlogPosts { get; set; } = new List<BlogPost>();
 }

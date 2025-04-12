@@ -1,0 +1,48 @@
+@model IEnumerable<Heilsunudd.Data.Data.CMS.ContactInformation>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kennitala)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kennitala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdContactInformation">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdContactInformation">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdContactInformation">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

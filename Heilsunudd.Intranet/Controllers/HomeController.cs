@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using HeilsunuddIntranet.Models;
+using Heilsunudd.Intranet.Models;
 
-namespace HeilsunuddIntranet.Controllers;
+namespace Heilsunudd.Intranet.Controllers;
 
 public class HomeController : Controller
 {
