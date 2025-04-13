@@ -2,21 +2,20 @@
 @using Microsoft.AspNetCore.Identity;
 @inject SignInManager<Users> SignInManager;
 
-<ul class="navbar-nav ms-auto">
+
     @if (SignInManager.IsSignedIn(User))
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Logout">Logout</a>
+        <li class="">
+            <a class="" asp-controller="Account" asp-action="Logout">Logout</a>
         </li>
     }
     else
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Login">Login</a>
+        <li class="">
+            <a class="py-2 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-controller="Account" asp-action="Login">Login</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Account" asp-action="Register">Register</a>
+        <span class="">|</span>
+        <li class="">
+            <a class="py-2 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-controller="Account" asp-action="Register">Register</a>
         </li>
     }
-
-</ul>

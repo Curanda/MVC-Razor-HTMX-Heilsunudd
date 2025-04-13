@@ -3,60 +3,57 @@
     Layout = "_AccountLayout";
 }
 
-<section class="vh-100 vw-100 my-auto">
-    <div class="container-fluid h-custom">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-md-9 col-lg-6 col-xl-5">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                     class="img-fluid" alt="Sample image">
-            </div>
-            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                <form>
+<!-- source:https://codepen.io/owaiswiz/pen/jOPvEPB -->
+<div class="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
+    <div class="max-w-screen-lg h-2/3 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center items-center flex-1">
+        <div class="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
 
-                    <div class="divider d-flex align-items-center my-4">
-                        <p class="text-center fw-bold mx-3 mb-0"></p>
-                    </div>
-
-                    <!-- Email input -->
-                    <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="email" id="form3Example3" class="form-control form-control-lg"
-                               placeholder="Enter a valid email address" />
-                        <label class="form-label" for="form3Example3">Email address</label>
-                    </div>
-
-                    <!-- Password input -->
-                    <div data-mdb-input-init class="form-outline mb-3">
-                        <input type="password" id="form3Example4" class="form-control form-control-lg"
-                               placeholder="Enter password" />
-                        <label class="form-label" for="form3Example4">Password</label>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <!-- Checkbox -->
-                        <div class="form-check mb-0">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-                            <label class="form-check-label" for="form2Example3">
-                                Remember me
-                            </label>
+            <div class="mt-12 flex flex-col items-center">
+                <div class="w-full flex-1 mt-8">
+                    <div class="flex flex-col items-center">
+                        <h1 class="text-2xl xl:text-3xl font-extrabold justify-center text-center">
+                            Sign In to your Heilsunudd account
+                        </h1>
+                        <div class="w-full flex-1 mt-2">
+                            <div class="flex gap-4 justify-center items-center">
+                                <a href="#" class="text-sm text-gray-600 hover:text-gray-400 hover:underline p-2 border-2 border-dashed rounded-md">Forgot
+                                    Password?</a>
+                                <a href="#" class="text-sm text-gray-600 hover:text-gray-400 hover:underline p-2 border-2 border-dashed rounded-md">Create
+                                    Account</a>
+                            </div>
                         </div>
-                        <a href="#!" class="text-body">Forgot password?</a>
                     </div>
 
-                    <div class="text-center text-lg-start mt-4 pt-2">
-                        <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
-                                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                        <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                                                                                          class="link-danger">Register</a></p>
+                    <div class="my-12 border-b text-center">
+                        <div
+                            class="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
+                            Or sign In with E-mail
+                        </div>
                     </div>
 
-                </form>
+                    <div class="mx-auto max-w-xs">
+                        <input
+                            class="w-full  px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                            type="email" placeholder="Email" />
+                        <input
+                            class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                            type="password" placeholder="Password" />
+                        <button
+                            class="mt-5 tracking-wide font-semibold bg-black text-white-500 w-full py-4 rounded-lg hover:bg-gray-500 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                            <svg class="w-6 h-6 -ml-2" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                                <circle cx="8.5" cy="7" r="4" />
+                                <path d="M20 8v6M23 11h-6" />
+                            </svg>
+                            <span class="text-white">
+                                Sign In
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
+        <img class="flex-1 object-contain w-1/4 mr-10" src="/public/slices.png" />
     </div>
-    <div
-        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
-        <div class="text-white mb-3 mb-md-0">
-            Copyright by NG © 2020. All rights reserved.
-        </div>
-    </div>
-</section>
+</div>

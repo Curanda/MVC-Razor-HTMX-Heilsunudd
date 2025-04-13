@@ -1,36 +1,39 @@
 @model IEnumerable<Heilsunudd.Data.Data.Bookings.Status>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Status";
     Layout = "_Layout";
 }
 
-<h1>Index</h1>
+<div class="relative z-0 flex flex-col gap-4 p-10 bg-white border-2 border-gray-600 rounded-md border-dashed [&>*]:mb-5 w-1/4 mx-auto">
 
-<p>
-    <a asp-action="Create">Create New</a>
+    
+<h1 class="text-center text-lg p-4 border-3 border-black bg-white text-black absolute z-10 rounded-2xl -top-10 left-35">Booking status Control Panel</h1>
+
+<p class="relative z-0 mt-5 text-center text-md rounded-lg bg-black text-white p-2 w-1/2 mb-5 hover:shadow-2xl hover:text-black hover:bg-white transition duration-300 ease-in-out border-2">
+    <a asp-action="Create">Create new status</a>
 </p>
-<table class="table">
+<table class="relative z-0">
     <thead>
         <tr>
-            <th>
+            <th class="text-sm">
                 @Html.DisplayNameFor(model => model.StatusName)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="flex-col w-full justify-between gap-10">
+            <td class="text-green-600 text-lg">
                 @Html.DisplayFor(modelItem => item.StatusName)
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdStatus">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdStatus">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdStatus">Delete</a>
+            <td class="flex flex-row justify-center items-center gap-2 [&>*]:my-2 ">
+                <a class="py-1 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-action="Edit" asp-route-id="@item.IdStatus">Edit</a>
+                <a class="py-1 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-action="Details" asp-route-id="@item.IdStatus">Details</a>
+                <a class="py-1 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-action="Delete" asp-route-id="@item.IdStatus">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+</div>

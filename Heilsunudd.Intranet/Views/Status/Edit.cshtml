@@ -5,29 +5,23 @@
     Layout = "_Layout";
 }
 
-<h1>Edit</h1>
-
-<h4>Status</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="relative z-0 flex flex-col gap-4 p-10 bg-white border-2 border-gray-600 rounded-md border-dashed w-1/4 mx-auto">
+<h1 class="text-center text-lg p-4 border-3 border-black bg-white text-black absolute z-10 rounded-2xl -top-10 left-35">Edit status</h1>
+        <form class="flex items-center justify-center w-full max-w-md gap-4" asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class=""></div>
             <input type="hidden" asp-for="IdStatus" />
-            <div class="form-group">
-                <label asp-for="StatusName" class="control-label"></label>
-                <input asp-for="StatusName" class="form-control" />
-                <span asp-validation-for="StatusName" class="text-danger"></span>
+            <div class="">
+                <label asp-for="StatusName" class="text-sm"></label>
+                <input asp-for="StatusName" class="text-green-600 text-lg" />
+                <span asp-validation-for="StatusName" class=""></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="py-1 px-3 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" />
             </div>
         </form>
-    </div>
+<div class="flex items-center justify-end w-full max-w-md">
+    <a class="px-3 py-2 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-300 ease-in-out hover:border-0 hover:-translate-y-2" asp-action="Index">Back to List</a>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

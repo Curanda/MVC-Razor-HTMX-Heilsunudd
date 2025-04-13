@@ -2,7 +2,47 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<div class="relative flex flex-col items-center justify-center z-10">
+    <div class="flex items-center justify-center flex-row w-full gap-3">
+        <span class="text-sm">■</span>
+        <span class="text-md">■</span>
+        <span class="text-lg">■</span>
+        <span class="text-xl">■</span>
+        <h1 class="mx-4 text-3xl font-inika">Welcome</h1>
+        <span class="text-xl">■</span>
+        <span class="text-lg">■</span>
+        <span class="text-md">■</span>
+        <span class="text-sm">■</span>
+    </div>
+    <p class="font-inika text-lg underline underline-offset-3">Modify page contents via menus below:</p>
 </div>
+<img src="public/slices.png" alt="slices" class="opacity-25 z-0 absolute w-1/3 top-50"/>
+<ul class="relative z-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 grid-flow-row lg:gap-20 gap-4 [&>*]:flex [&>*]:flex-col [&>*]:items-center [&>*]:justify-center [&>*]:p-3 [&>*]:border-dotted [&>*]:border-3 [&>*]:border-gray-400 [&>*]:gap-2 [&>*]:w-full [&>*]:h-full [&>*]:bg-white [&>*]:rounded-lg [&>*]:shadow-lg [&>*]:hover:bg-black [&>*]:hover:text-white [&>*]:hover:scale-98 [&>*]:cursor-pointer [&>*]:transition [&>*]:duration-300 [&>*]:ease-in-out">
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="AboutUs" asp-action="Index">About Us</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="AvailableServices" asp-action="Index">Available Services</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="BlogCategory" asp-action="Index">Blog Categories</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="BlogPost" asp-action="Index">Blog Posts</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="Calendar" asp-action="Index">Calendar</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="ContactInformation" asp-action="Index">Contact Information</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="Location" asp-action="Index">Locations</a>
+    </li>
+    <li class="menu-item">
+        <a class="" asp-area="" asp-controller="Status" asp-action="Index">Status</a>
+    </li>
+</ul>
+@* <img  alt="Relaxed woman" src="public/home-konan.jpg" class="w-2/5 opacity-25 rounded-xl absolute justify-self-center -z-100"/> *@
+
