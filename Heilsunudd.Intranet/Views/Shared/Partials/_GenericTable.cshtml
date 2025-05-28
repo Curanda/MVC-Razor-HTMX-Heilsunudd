@@ -1,0 +1,45 @@
+@model IEnumerable<object>
+@{
+    var idPropertyName = ViewData["IdPropertyName"] as string ?? "Id";
+}
+
+@if (Model.Any())
+{
+    <table class="relative z-0">
+        <thead>
+        <tr>
+            @foreach (var property in Model.First().GetType().GetProperties())
+            {
+                if (!property.Name.StartsWith("Id"))
+                {
+                    <th class="text-sm">
+                        @property.Name
+                    </th>
+                }
+            }
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="flex-col w-full justify-between gap-10">
+                @foreach (var property in item.GetType().GetProperties())
+                {
+                    if (!property.Name.StartsWith("Id"))
+                    {
+                        <td class="text-green-600 text-lg">
+                            @property.GetValue(item)
+                        </td>
+                    }
+                }
+                <partial name="Partials/_ItemsActions" model="item" />
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No data available</p>
+}

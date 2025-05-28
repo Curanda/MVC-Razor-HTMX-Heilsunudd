@@ -5,39 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Heilsunudd.Intranet</title>
     <script type="importmap"></script>
-    <link rel="stylesheet" href="~/css/input.css" asp-append-version="true"/>
+    @* <link rel="stylesheet" href="~/css/input.css" asp-append-version="true"/> *@
     <link href="~/css/output.css" rel="stylesheet"  asp-append-version="true">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body class="min-h-screen flex flex-col justify-between bg-[#F0F0F0]">
     
-    <header>
-        <nav class="border-b-2 shadow-xl">
-            <div class="flex flex-row items-center justify-between flex-wrap bg-white p-6 w-full">
-                <div>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="border-2 border-black rounded-lg py-3 px-10 cursor-pointer transition duration-300 ease-in-out hover:outline-dashed hover:outline-2 hover:outline-offset-1 hover:border-0 hover:-translate-y-2 active:bg-black active:text-white active:scale-98 font-inika" asp-area="" asp-controller="Home" asp-action="Index">Heilsunudd Main Panel</a>
+</head>
+<body class="max-h-screen min-h-fit font-inika flex flex-col justify-between bg-[#F0F0F0]">
+<header class="mb-2 shadow-xl">
+    <nav class="border-b-3 border-b-gray-300 border-dashed">
+        <div class="flex flex-row items-center justify-between flex-wrap bg-white p-6 w-full">
+            <div class="flex items-center gap-4">
+                <label for="my-drawer-2" class="btn btn-square btn-ghost drawer-button lg:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </label>
+                <div class="flex flex-row gap-2 items-center justify-around border-2 border-black rounded-lg py-3 px-8 cursor-pointer transition duration-100 ease-in-out hover:border-dashed hover:scale-95 hover:-translate-y-1 hover:translate-x-1 active:bg-black active:text-white bg-[url('/public/grill-top.png')] bg-auto">
+                    <img src="/public/body-massage-big.png" class="h-10 w-10" alt="massage logo"/>
+                    <a asp-area="" asp-controller="Home" asp-action="Index">Heilsunudd Main Panel</a>
                 </div>
-                <ul class="flex items-center gap-4">
-                    <partial name="_LoginPartial"/>
-                </ul>
             </div>
-        </nav>
+            <ul class="flex items-center gap-4">
+                <partial name="_LoginPartial"/>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<div class="drawer lg:drawer-open flex-grow shadow-2xl">
+    <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content flex flex-col justify-between items-center">
+    <img class="brightness-125 contrast-150 max-h-20 w-full bg-transparent" src="/public/grill-top.png" alt="stripes"/>
+        <main role="main" class="p-6">
+            @RenderBody()
+        </main>
         <img
-            class="brightness-125 contrast-150 max-h-20 w-full bg-transparent"
+            class="brightness-125 contrast-150 max-h-20 w-full bg-transparent mb-2"
             src="/public/grill-top.png"
             alt="stripes"/>
-    </header>
-    <main role="main" class="flex-grow pb-3 flex flex-col gap-20 items-center justify-center w-full h-full">
-        @RenderBody()
-    </main>
-    <footer class="">
-        <img
-            class="brightness-125 contrast-150 max-h-20 w-full shadow-lg bg-transparent"
-            src="/public/grill-top.png"
-            alt="stripes"/>
-        <div class="border-t-2 p-4 max-h-1/12 w-full bg-white font-inika">
+    </div>
+    <div class="drawer-side shadow-xl">
+        <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
+        @await Component.InvokeAsync("ControllerList")
+    </div>
+</div>
+    <footer class="border-t-3 border-t-gray-300 border-dashed">
+        <div class="p-4 max-h-1/12 w-full bg-white font-inika">
             &copy; 2025 - Heilsunudd Intranet - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>

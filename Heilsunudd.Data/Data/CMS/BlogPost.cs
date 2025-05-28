@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.CMS;
 
+[Index(nameof(Title), IsUnique = true)]
 public class BlogPost
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdBlogPost { get; set; }
     
     [Required(ErrorMessage = "Title is required")]
@@ -36,11 +39,17 @@ public class BlogPost
     public required DateOnly PublicationDate { get; set; }
     
     [Required(ErrorMessage = "Category is required")]
-    [Display(Name = "Category")]
+    [Display(Name = "CategoryName")]
     public int IdBlogCategory { get; set; }
     
     [ForeignKey(nameof(IdBlogCategory))]
     public BlogCategory? BlogCategory { get; set; }
+    
+    // [Required(ErrorMessage = "Category is required")]
+    // [Display(Name = "Category")]
+    // [ForeignKey("BlogCategory.CategoryName")]
+    // [MaxLength(50, ErrorMessage = "Category name can contain up to 50 characters")]
+    // public required string CategoryName { get; set; }
     
     [Required(ErrorMessage = "Provide at least 2 tags separated by coma")]
     [MaxLength(100, ErrorMessage = "Tags can contain up to 100 characters")]

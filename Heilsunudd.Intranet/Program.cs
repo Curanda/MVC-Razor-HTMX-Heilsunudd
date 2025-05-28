@@ -1,9 +1,9 @@
 using Heilsunudd.Data.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Heilsunudd.Intranet.Data;
 using Heilsunudd.Intranet.Models.User;
 using Microsoft.AspNetCore.Identity;
+using Scalar.AspNetCore;
 
 namespace Heilsunudd.Intranet;
 
@@ -12,6 +12,18 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+        
+ 
+        builder.Services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(policy =>
+            {
+                policy.WithOrigins("http://localhost:3000", "https://localhost:3000")
+                      .AllowAnyHeader()
+                      .AllowAnyMethod()
+                      .AllowCredentials();
+            });
+        });
         
         builder.Services.AddDbContext<UserContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("HeilsunuddContext") ?? throw new InvalidOperationException("Connection string 'HeilsunuddContext' not found.")));
@@ -41,12 +53,16 @@ public class Program
             app.UseHsts();
         }
 
-        app.UseHttpsRedirection();
+        // app.UseHttpsRedirection();
         app.UseRouting();
+
+        // Add CORS middleware before authorization
+        app.UseCors();
 
         app.UseAuthorization();
 
         app.MapStaticAssets();
+        app.MapControllers();
         app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}")

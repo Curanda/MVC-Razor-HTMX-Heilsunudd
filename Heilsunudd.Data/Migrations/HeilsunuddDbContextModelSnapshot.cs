@@ -56,6 +56,9 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasKey("IdService");
 
+                    b.HasIndex("ServiceType")
+                        .IsUnique();
+
                     b.ToTable("AvailableService");
                 });
 
@@ -67,8 +70,8 @@ namespace Heilsunudd.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCalendar"));
 
-                    b.Property<TimeOnly>("EndTime")
-                        .HasColumnType("time");
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("IdBooking")
                         .HasColumnType("int");
@@ -144,6 +147,9 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasKey("IdLocation");
 
+                    b.HasIndex("LocationName")
+                        .IsUnique();
+
                     b.ToTable("Location");
                 });
 
@@ -161,6 +167,9 @@ namespace Heilsunudd.Data.Migrations
                         .HasColumnType("nvarchar(10)");
 
                     b.HasKey("IdStatus");
+
+                    b.HasIndex("StatusName")
+                        .IsUnique();
 
                     b.ToTable("Status");
                 });
@@ -193,6 +202,9 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasKey("IdAboutUs");
 
+                    b.HasIndex("Title")
+                        .IsUnique();
+
                     b.ToTable("AboutUs");
                 });
 
@@ -210,6 +222,9 @@ namespace Heilsunudd.Data.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("IdBlogCategory");
+
+                    b.HasIndex("CategoryName")
+                        .IsUnique();
 
                     b.ToTable("BlogCategory");
                 });
@@ -257,6 +272,9 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasIndex("IdBlogCategory");
 
+                    b.HasIndex("Title")
+                        .IsUnique();
+
                     b.ToTable("BlogPost");
                 });
 
@@ -273,9 +291,10 @@ namespace Heilsunudd.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Kennitala")
-                        .HasMaxLength(8)
-                        .HasColumnType("int");
+                    b.Property<string>("Kennitala")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
@@ -283,6 +302,9 @@ namespace Heilsunudd.Data.Migrations
                         .HasColumnType("nvarchar(20)");
 
                     b.HasKey("IdContactInformation");
+
+                    b.HasIndex("Kennitala")
+                        .IsUnique();
 
                     b.ToTable("ContactInformation");
                 });

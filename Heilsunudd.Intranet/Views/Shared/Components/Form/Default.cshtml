@@ -1,0 +1,41 @@
+@* @model Heilsunudd.Intranet.Views.Shared.Components.FormViewModel *@
+@* *@
+@* <div class="max-w-2xl mx-auto"> *@
+@*     <div class="card bg-base-100 shadow-xl"> *@
+@*         <div class="card-body"> *@
+@*             <h2 class="card-title text-2xl mb-6">@Model.Title</h2> *@
+@*              *@
+@*             <form method="post" class="space-y-6"> *@
+@*                 @{ *@
+@*                     var partialName = $"_{Model.ModelTypeName}Form"; *@
+@*                 } *@
+@*                  *@
+@*                 @try *@
+@*                 { *@
+@*                     @await Html.PartialAsync(partialName, Model.Model) *@
+@*                 } *@
+@*                 catch *@
+@*                 { *@
+@*                     <div class="alert alert-warning"> *@
+@*                         <span>Form template for @Model.ModelTypeName not found. Please create @partialName.cshtml</span> *@
+@*                     </div> *@
+@*                      *@
+@*                     $1$ Fallback: Basic form fields #1# *@
+@*                     <div class="form-control w-full"> *@
+@*                         <label class="label"> *@
+@*                             <span class="label-text font-medium">Data</span> *@
+@*                         </label> *@
+@*                         <textarea class="textarea textarea-bordered w-full h-32" readonly>@Model.Model.ToString()</textarea> *@
+@*                     </div> *@
+@*                 } *@
+@*                  *@
+@*                 <div class="form-control mt-8"> *@
+@*                     <div class="flex gap-4 justify-end"> *@
+@*                         <a href="@Model.CancelUrl" class="btn btn-ghost">Cancel</a> *@
+@*                         <button type="submit" class="btn btn-primary">@Model.SubmitText</button> *@
+@*                     </div> *@
+@*                 </div> *@
+@*             </form> *@
+@*         </div> *@
+@*     </div> *@
+@* </div> *@

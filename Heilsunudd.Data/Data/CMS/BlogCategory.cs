@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.CMS;
 
+[Index(nameof(CategoryName), IsUnique = true)]
 public class BlogCategory
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdBlogCategory { get; set; }
     
     [Required(ErrorMessage = "Please provide category name")]

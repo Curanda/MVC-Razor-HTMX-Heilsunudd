@@ -48,8 +48,23 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: BlogPost/Create
         public IActionResult Create()
         {
-            ViewData["IdBlogCategory"] = new SelectList(_context.Set<BlogCategory>(), "IdBlogCategory", "CategoryName");
-            return View();
+            ViewData["CategoryName"] = new SelectList(_context.Set<BlogCategory>(), "IdBlogCategory", "CategoryName");
+            var blogPost = new BlogPost
+            {
+                Title = string.Empty,
+                PublicationDate = DateOnly.FromDateTime(DateTime.Now),
+                Content = string.Empty,
+                ImageUrl = string.Empty,
+                AuthorName = string.Empty,
+                IdBlogCategory = 0,
+                Tags = string.Empty,
+                BlogCategory = new BlogCategory
+                {
+                    IdBlogCategory = 0,
+                    CategoryName = string.Empty
+                }
+            };
+            return View(blogPost);
         }
 
         // POST: BlogPost/Create
@@ -95,31 +110,32 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != blogPost.IdBlogPost)
             {
-                return NotFound();
+                blogPost.IdBlogPost = id;
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(blogPost);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BlogPostExists(blogPost.IdBlogPost))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                ViewData["IdBlogCategory"] = new SelectList(_context.Set<BlogCategory>(), "IdBlogCategory",
+                    "CategoryName", blogPost.IdBlogCategory);
+                return View(blogPost);
             }
-            ViewData["IdBlogCategory"] = new SelectList(_context.Set<BlogCategory>(), "IdBlogCategory", "CategoryName", blogPost.IdBlogCategory);
-            return View(blogPost);
+
+            try
+            {
+                _context.Update(blogPost);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BlogPostExists(blogPost.IdBlogPost))
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: BlogPost/Delete/5

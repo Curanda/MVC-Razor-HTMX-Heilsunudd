@@ -41,7 +41,14 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: AboutUs/Create
         public IActionResult Create()
         {
-            return View();
+            var aboutUs = new AboutUs
+            {
+                Title = string.Empty,
+                Content = string.Empty,
+                ImageUrl = string.Empty,
+                Position = 0
+            };
+            return View(aboutUs);
         }
 
         // POST: AboutUs/Create
@@ -85,30 +92,26 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != aboutUs.IdAboutUs)
             {
-                return NotFound();
+                aboutUs.IdAboutUs = id;
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(aboutUs);
+            try
             {
-                try
-                {
-                    _context.Update(aboutUs);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!AboutUsExists(aboutUs.IdAboutUs))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(aboutUs);
+                await _context.SaveChangesAsync();
             }
-            return View(aboutUs);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AboutUsExists(aboutUs.IdAboutUs))
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: AboutUs/Delete/5

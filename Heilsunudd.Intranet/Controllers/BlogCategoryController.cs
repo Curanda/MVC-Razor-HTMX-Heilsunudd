@@ -46,7 +46,11 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: BlogCategory/Create
         public IActionResult Create()
         {
-            return View();
+            var blogCategory = new BlogCategory
+            {
+                CategoryName = string.Empty
+            };
+            return View(blogCategory);
         }
 
         // POST: BlogCategory/Create
@@ -90,30 +94,26 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != blogCategory.IdBlogCategory)
             {
-                return NotFound();
+                blogCategory.IdBlogCategory = id;
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(blogCategory);
+            try
             {
-                try
-                {
-                    _context.Update(blogCategory);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!BlogCategoryExists(blogCategory.IdBlogCategory))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(blogCategory);
+                await _context.SaveChangesAsync();
             }
-            return View(blogCategory);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!BlogCategoryExists(blogCategory.IdBlogCategory))
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: BlogCategory/Delete/5

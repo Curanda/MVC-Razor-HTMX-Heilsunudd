@@ -47,7 +47,18 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: Location/Create
         public IActionResult Create()
         {
-            return View();
+            var location = new Location
+            {
+                LocationName = string.Empty,
+                LocationTown = string.Empty,
+                LocationStreet = string.Empty,
+                LocationHouseNumber = string.Empty,
+                LocationCoordinates = string.Empty,
+                LocationDescription = string.Empty,
+                LocationImageUrl = string.Empty,
+                LocationIsActive = true
+            };
+            return View(location);
         }
 
         // POST: Location/Create
@@ -91,30 +102,26 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != location.IdLocation)
             {
-                return NotFound();
+                location.IdLocation = id;
+                
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(location);
+            try
             {
-                try
-                {
-                    _context.Update(location);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!LocationExists(location.IdLocation))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(location);
+                await _context.SaveChangesAsync();
             }
-            return View(location);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!LocationExists(location.IdLocation))
+                {
+                    return NotFound();
+                }
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Location/Delete/5

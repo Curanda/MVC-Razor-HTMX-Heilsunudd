@@ -46,7 +46,15 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: Calendar/Create
         public IActionResult Create()
         {
-            return View();
+            var calendar = new Calendar
+            {
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now.AddHours(1),
+                IdBooking = 0,
+                LocationName = string.Empty,
+                StatusName = string.Empty
+            };
+            return View(calendar);
         }
 
         // POST: Calendar/Create
@@ -90,30 +98,26 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != calendar.IdCalendar)
             {
-                return NotFound();
+                calendar.IdCalendar = id;
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(calendar);
+            try
             {
-                try
-                {
-                    _context.Update(calendar);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!CalendarExists(calendar.IdCalendar))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(calendar);
+                await _context.SaveChangesAsync();
             }
-            return View(calendar);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CalendarExists(calendar.IdCalendar))
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Calendar/Delete/5

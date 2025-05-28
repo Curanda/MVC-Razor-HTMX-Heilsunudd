@@ -113,6 +113,10 @@
       "PackagePath": "staticwebassets/public/grill-top3.svg"
     },
     {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/im-card.jpg",
+      "PackagePath": "staticwebassets/public/im-card.jpg"
+    },
+    {
       "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/img-hero.png",
       "PackagePath": "staticwebassets/public/img-hero.png"
     },

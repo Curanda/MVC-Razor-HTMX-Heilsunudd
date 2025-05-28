@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
+[Index(nameof(ServiceType), IsUnique = true)]
 public class AvailableService
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdService { get; set; }
     
     [Required(ErrorMessage = "Please provide service type")]

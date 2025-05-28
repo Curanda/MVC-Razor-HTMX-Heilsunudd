@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "p33SyokAqhcogbgyd1WTytFTHwC8JdEXTQCXJi05NSE=",
+  "Hash": "7WC46TxDkq4We4TprFryrvi85bIP7ZXaxkZWzpDO2io=",
   "Source": "Heilsunudd.Portal",
   "BasePath": "_content/Heilsunudd.Portal",
   "Mode": "Default",
@@ -1151,6 +1151,27 @@
       "OriginalItemSpec": "wwwroot/public/grill-top3.svg"
     },
     {
+      "Identity": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/im-card.jpg",
+      "SourceId": "Heilsunudd.Portal",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/",
+      "BasePath": "_content/Heilsunudd.Portal",
+      "RelativePath": "public/im-card#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h9h97holl1",
+      "Integrity": "pco8fvr6Bt1pvZS1Sy2xA9Sa17eb0srWgYlDxitBPAg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/public/im-card.jpg"
+    },
+    {
       "Identity": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/img-hero.png",
       "SourceId": "Heilsunudd.Portal",
       "SourceType": "Discovered",
@@ -2155,7 +2176,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2208,7 +2229,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2245,7 +2266,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2292,7 +2313,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2353,7 +2374,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2398,7 +2419,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2453,7 +2474,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2514,7 +2535,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2559,7 +2580,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2614,7 +2635,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2667,7 +2688,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2704,7 +2725,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 12:04:57 GMT"
+          "Value": "Mon, 26 May 2025 12:15:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8795,6 +8816,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-/aHmaParX5DM+22vKCR0Hx1A6WtqInvtCTHYuQsEuRk="
+        }
+      ]
+    },
+    {
+      "Route": "public/im-card.h9h97holl1.jpg",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/im-card.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73480"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pco8fvr6Bt1pvZS1Sy2xA9Sa17eb0srWgYlDxitBPAg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 07:57:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h9h97holl1"
+        },
+        {
+          "Name": "label",
+          "Value": "public/im-card.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pco8fvr6Bt1pvZS1Sy2xA9Sa17eb0srWgYlDxitBPAg="
+        }
+      ]
+    },
+    {
+      "Route": "public/im-card.jpg",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/im-card.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "73480"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pco8fvr6Bt1pvZS1Sy2xA9Sa17eb0srWgYlDxitBPAg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 13 Apr 2025 07:57:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pco8fvr6Bt1pvZS1Sy2xA9Sa17eb0srWgYlDxitBPAg="
         }
       ]
     },

@@ -1,0 +1,152 @@
+@model object
+
+@{
+    var modelType = Model.GetType();
+    var properties = modelType.GetProperties()
+        .Where(p => p.CanWrite && !p.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.EditableAttribute), false).Any())
+        .ToList();
+
+    var idItem = ViewData["IdItem"] != null ? (int)ViewData["IdItem"]! : 0;
+
+    string SplitPropName(string propName)
+    {
+        var result = "";
+
+        foreach (var t in propName)
+        {
+            if (char.IsUpper(t))
+            {
+                result += ' ';
+            }
+
+            result += t;
+        }
+
+        return result.Trim();
+    }
+}
+@{
+    
+    // List<SelectListItem> GetForeignKeyOptions(System.Reflection.PropertyInfo property)
+    // {
+    //     var patterns = new[]
+    //     {
+    //         property.Name,
+    //         property.Name.Replace("Id", "")
+    //     };
+    //     
+    //     foreach (var pattern in patterns)
+    //     {
+    //         if (ViewData[pattern] is SelectList selectList)
+    //         {
+    //             return selectList.ToList();
+    //         }
+    //     }
+    //     
+    //     return new List<SelectListItem>();
+    // }
+}
+
+<div class="max-w-2xl mx-auto">
+    <div class="card bg-base-100 shadow-2xl">
+        <div class="card-body">
+            <h2 class="card-title text-2xl mb-6">@ViewData["FormTitle"]</h2>
+            
+            <form method="post" asp-controller="@ViewData["Title"]" asp-action="Edit" class="space-y-6">
+                <input type="hidden" name="@ViewData["KeyProp"]" value="@idItem" />
+                @foreach (var prop in properties)
+                {
+                    var currentValue = prop.GetValue(Model);
+                    var propName = prop.Name;
+                    var displayName = SplitPropName(propName);
+                    var isRequired = prop.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.RequiredAttribute), false).Any();
+
+
+                    <div class="form-control w-full">
+                        <label class="label" for="@displayName">
+                            <span class="label-text font-medium">
+                                @displayName
+                                @ViewData["IdItem"]
+                                @idItem
+                                @if (isRequired)
+                                {
+                                    <span class="text-error">*</span>
+                                }
+                            </span>
+                        </label>
+
+                        @if (prop.PropertyType == typeof(string))
+                        {
+                            <input type="text"
+                                   name="@propName"
+                                   id="@propName"
+                                   class="input input-bordered w-full"
+                                   value="@(currentValue?.ToString() ?? "")"
+                                   placeholder="Old value: @currentValue?.ToString()"
+                                   @(isRequired ? "required" : "")/>
+                        }
+                        else if (prop.PropertyType == typeof(bool) || prop.PropertyType == typeof(bool?))
+                        {
+                            <input type="checkbox"
+                                   name="@propName"
+                                   id="@propName"
+                                   value="true"
+                                   class="checkbox checkbox-primary"
+                                   checked="@(currentValue != null && (bool)currentValue)"/>
+                            <span class="label-text">@displayName yes/no?</span>
+                            <input type="hidden" name="@propName" value="false"/>
+                        }
+                        else if (prop.PropertyType == typeof(int) || prop.PropertyType == typeof(int?) ||
+                                 prop.PropertyType == typeof(decimal) || prop.PropertyType == typeof(decimal?) ||
+                                 prop.PropertyType == typeof(double) || prop.PropertyType == typeof(double?))
+                        {
+                            <input type="number"
+                                   name="@propName"
+                                   id="@propName"
+                                   class="input input-bordered w-full"
+                                   value="@(currentValue?.ToString() ?? "")"
+                                   placeholder="Old value: @currentValue?.ToString()"
+                                   step="@(prop.PropertyType.Name.Contains("decimal") ? "0.01" : "1")"
+                                   @(isRequired ? "required" : "")/>
+                        }
+                        else if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTime?))
+                        {
+                            <input type="date"
+                                   name="@propName"
+                                   id="@propName"
+                                   class="input input-bordered w-full"
+                                   value="@(currentValue != null ? ((DateTime)currentValue).ToString("yyyy-MM-dd") : "")"
+                                   @(isRequired ? "required" : "")/>
+                        }
+                        else
+                        {
+                            <input type="text"
+                                   name="@propName"
+                                   id="@propName"
+                                   class="input input-bordered w-full"
+                                   value="@(currentValue?.ToString() ?? "")"
+                                   placeholder="Old value: @currentValue?.ToString()"
+                                   @(isRequired ? "required" : "")/>
+                        }
+
+                        @if (ViewData.ModelState.ContainsKey(propName) && ViewData.ModelState[propName]?.Errors.Count > 0)
+                        {
+                            <label class="label">
+                                <span class="label-text-alt text-error">
+                                    @ViewData.ModelState[propName]?.Errors.First().ErrorMessage
+                                </span>
+                            </label>
+                        }
+                    </div>
+                }
+
+                <div class="form-control mt-8">
+                    <div class="flex gap-4 justify-end">
+                        <a href="@ViewData["CancelUrl"]" class="btn btn-ghost">Cancel</a>
+                        <button type="submit" title="Edit" class="btn btn-dash btn-accent">@ViewData["SubmitText"]</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

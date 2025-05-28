@@ -1,0 +1,10 @@
+@model Heilsunudd.Data.Data.Bookings.AvailableService
+
+@{
+    ViewData["Title"] = "Create Available Service";
+    ViewData["FormTitle"] = "Create New Available Service";
+    ViewData["SubmitText"] = "Create Available Service";
+    ViewData["CancelUrl"] = Url.Action("Index");
+}
+
+@await Html.PartialAsync("Partials/_FormHelper", Model)

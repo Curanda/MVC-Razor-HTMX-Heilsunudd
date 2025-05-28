@@ -47,15 +47,16 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: Status/Create
         public IActionResult Create()
         {
-            return View();
+            var status = new Status
+            {
+                StatusName = string.Empty
+            };
+            return View(status);
         }
 
-        // POST: Status/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdStatus,StatusName")] Status status)
+        public async Task<IActionResult> Create([Bind("StatusName")] Status status)
         {
             if (ModelState.IsValid)
             {
@@ -65,6 +66,8 @@ namespace Heilsunudd.Intranet.Controllers
             }
             return View(status);
         }
+
+
 
         // GET: Status/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -79,6 +82,8 @@ namespace Heilsunudd.Intranet.Controllers
             {
                 return NotFound();
             }
+            
+            
             return View(status);
         }
 
@@ -89,32 +94,30 @@ namespace Heilsunudd.Intranet.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdStatus,StatusName")] Status status)
         {
+            Console.WriteLine($"Status ID not bound: {id}");
+            Console.WriteLine($"Status ID bound: {status.IdStatus}");
+            Console.WriteLine($"Status Name: {status.StatusName}");
             if (id != status.IdStatus)
             {
+                Console.WriteLine($"Status ID mismatch: {id} != {status.IdStatus}");
+                status.IdStatus = id;
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(status);
+            try
             {
-                try
-                {
-                    _context.Update(status);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StatusExists(status.IdStatus))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(status);
+                await _context.SaveChangesAsync();
             }
-            return View(status);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!StatusExists(status.IdStatus))
+                {
+                    return NotFound();
+                }
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Status/Delete/5

@@ -52,24 +52,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableServices/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZXMvQ3JlYXRlLmNzaHRtbA==
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableService/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZS9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableServices/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZXMvRGVsZXRlLmNzaHRtbA==
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableService/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZS9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableServices/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZXMvRGV0YWlscy5jc2h0bWw=
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableService/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZS9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableServices/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZXMvRWRpdC5jc2h0bWw=
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableService/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZS9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableServices/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZXMvSW5kZXguY3NodG1s
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/AvailableService/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXZhaWxhYmxlU2VydmljZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/BlogCategory/Create.cshtml]
@@ -180,8 +180,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTG9jYXRpb24vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Components/ControllerList/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvQ29udHJvbGxlckxpc3QvRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Components/DataTable/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvRGF0YVRhYmxlL0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Components/DataTable/Empty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvRGF0YVRhYmxlL0VtcHR5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Components/Form/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvRm9ybS9EZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Components/Status/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0NvbXBvbmVudHMvU3RhdHVzL0RlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_ControlPanel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19Db250cm9sUGFuZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_EditHelper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19FZGl0SGVscGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_FormHelper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19Gb3JtSGVscGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_GenericTable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19HZW5lcmljVGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_ItemsActions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19JdGVtc0FjdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/Partials/_TableHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL1BhcnRpYWxzL19UYWJsZUhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/_AccountLayout.cshtml]
@@ -190,6 +234,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/_TableLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19UYWJsZUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/Views/Shared/_ValidationScriptsPartial.cshtml]

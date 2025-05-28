@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
+[Index(nameof(LocationName), IsUnique = true)]
 public class Location
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdLocation { get; set; }
     
     [Required(ErrorMessage = "Location name is required")]

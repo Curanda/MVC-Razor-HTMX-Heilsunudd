@@ -3,11 +3,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
+
 public class Booking
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     [Column(TypeName = "int")]
+    [Editable(false)]
     public int IdBooking { get; set; }
     
     [Required(ErrorMessage = "Please provide first name")]

@@ -9,6 +9,7 @@ public class Calendar
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdCalendar { get; set; }
     
     [DataType(DataType.DateTime)]
@@ -16,10 +17,10 @@ public class Calendar
     [Display(Name = "Start Time")]
     public required DateTime StartTime { get; set; }
     
-    [DataType(DataType.Time)]
-    [Column(TypeName = "time")]
+    [DataType(DataType.DateTime)]
+    [Column(TypeName = "datetime")]
     [Display(Name = "End Time")]
-    public required TimeOnly EndTime { get; set; }
+    public required DateTime EndTime { get; set; }
     
     [Display(Name = "Booking ID")]
     [ForeignKey("Booking.IdBooking")]

@@ -1,0 +1,13 @@
+@model Type
+
+<thead>
+<tr>
+    @foreach (var property in Model.GetProperties())
+    {
+        <th class="text-sm">
+            @property.Name
+        </th>
+    }
+    <th></th>
+</tr>
+</thead>

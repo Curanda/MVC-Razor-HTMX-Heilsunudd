@@ -1,12 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.CMS;
 
+[Index(nameof(Title), IsUnique = true)]
 public class AboutUs
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Editable(false)]
     public int IdAboutUs { get; set; }
     
     [Required(ErrorMessage = "Title is required")]

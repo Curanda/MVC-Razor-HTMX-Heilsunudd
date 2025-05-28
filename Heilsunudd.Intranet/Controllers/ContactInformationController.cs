@@ -47,7 +47,14 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: ContactInformation/Create
         public IActionResult Create()
         {
-            return View();
+            var contactInformation = new ContactInformation
+            {
+                PhoneNumber = string.Empty,
+                Kennitala = string.Empty,
+                CompanyName = string.Empty
+            };
+            
+            return View(contactInformation);
         }
 
         // POST: ContactInformation/Create
@@ -91,30 +98,26 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (id != contactInformation.IdContactInformation)
             {
-                return NotFound();
+                contactInformation.IdContactInformation = id;
+                // return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(contactInformation);
+            try
             {
-                try
-                {
-                    _context.Update(contactInformation);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ContactInformationExists(contactInformation.IdContactInformation))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _context.Update(contactInformation);
+                await _context.SaveChangesAsync();
             }
-            return View(contactInformation);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ContactInformationExists(contactInformation.IdContactInformation))
+                {
+                    return NotFound();
+                }
+
+                throw;
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: ContactInformation/Delete/5
