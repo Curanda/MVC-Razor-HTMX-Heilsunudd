@@ -268,6 +268,8 @@
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/scopedcss/Views/Shared/_Layout.cshtml.rz.scp.css
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/scopedcss/bundle/Heilsunudd.Intranet.styles.css
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/scopedcss/projectbundle/Heilsunudd.Intranet.bundle.scp.css
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/r1wgn0a4uj-ovnzdwobvx.gz
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/6qto7a08gb-uv5y1lyapv.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/4fl7zz914p-trmpj7rr9u.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/uoxrie39ix-61n19gt1b8.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/yopp9nobd1-fr7q2aak1r.gz
@@ -303,5 +305,3 @@
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/Heilsunudd.Intranet.pdb
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/Heilsunudd.Intranet.genruntimeconfig.cache
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/ref/Heilsunudd.Intranet.dll
-/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/r1wgn0a4uj-ovnzdwobvx.gz
-/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Intranet/obj/Debug/net9.0/compressed/6qto7a08gb-uv5y1lyapv.gz

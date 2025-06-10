@@ -1,8 +1,6 @@
 namespace Heilsunudd.Intranet.Views.Shared.Components;
 
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
 
 [ViewComponent(Name = "Form")]
 public class FormViewComponent : ViewComponent

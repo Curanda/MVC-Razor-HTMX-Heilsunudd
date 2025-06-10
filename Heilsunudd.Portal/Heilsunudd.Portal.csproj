@@ -5,11 +5,21 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Heilsunudd</RootNamespace>
+    <UserSecretsId>b9ce17ca-ae2c-4dc5-8f83-2e4ed563bcf5</UserSecretsId>
   </PropertyGroup>
+
+    <ItemGroup>
+    <ProjectReference Include="..\Heilsunudd.Data\Heilsunudd.Data.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="LiteDB" Version="5.0.21" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

@@ -1,10 +1,16 @@
+@using System.ComponentModel
+@using System.ComponentModel.DataAnnotations.Schema
+@using System.Reflection
+@using Heilsunudd.Data.Data.Bookings
 @model object
 
 @{
     var modelType = Model.GetType();
+
     var properties = modelType.GetProperties()
-        .Where(p => p.CanWrite && !HasKeyAttribute(p))
+        .Where(p => p.CanWrite && p.GetCustomAttribute<BrowsableAttribute>() is not { Browsable: false } && !p.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.KeyAttribute), false).Any())
         .ToList();
+    
 
     string SplitPropName(string propName)
     {
@@ -24,33 +30,8 @@
     }
 }
 
-@functions {
-    bool HasKeyAttribute(System.Reflection.PropertyInfo property)
-    {
-        return property.GetCustomAttributes(typeof(System.ComponentModel.DataAnnotations.KeyAttribute), false).Any();
-    }
-    
-    // List<SelectListItem> GetForeignKeyOptions(System.Reflection.PropertyInfo property)
-    // {
-    //     var patterns = new[]
-    //     {
-    //         property.Name,
-    //         property.Name.Replace("Id", "")
-    //     };
-    //     
-    //     foreach (var pattern in patterns)
-    //     {
-    //         if (ViewData[pattern] is SelectList selectList)
-    //         {
-    //             return selectList.ToList();
-    //         }
-    //     }
-    //     
-    //     return new List<SelectListItem>();
-    // }
-}
 
-<div class="max-w-2xl mx-auto">
+<div class="max-w-3xl mx-auto">
     <div class="card bg-base-100 shadow-2xl">
         <div class="card-body">
             <h2 class="card-title text-2xl mb-6">@ViewData["FormTitle"]</h2>
@@ -117,6 +98,91 @@
                                    value="@(currentValue != null ? ((DateTime)currentValue).ToString("yyyy-MM-dd") : "")"
                                    @(isRequired ? "required" : "") />
                         }
+
+                        else if (prop.GetCustomAttributes(typeof(ForeignKeyAttribute), false).Any())
+                        {
+                            var viewDataKey = prop.Name.Replace("Id", "");
+                            
+                            if (viewDataKey == "Service")
+                            {
+                                viewDataKey = "AvailableService";
+                            }
+                            
+                            if (ViewData[viewDataKey] is Dictionary<int, string> options)
+                            {
+                                <select name="@viewDataKey" id="@propName" class="select select-bordered w-full">
+                                    @* <option value="">Select @displayName</option> *@
+                                    @foreach(var option in options)
+                                    {
+                                        var isSelected = currentValue?.ToString() == option.Key.ToString();
+                                        <option value="@option.Key"  selected="@isSelected">@option.Value</option>
+                                    }
+                                </select>
+                            }
+                        }
+                        else if (prop.PropertyType == typeof(ICollection<AvailableService>))
+                        {
+                            @if (ViewBag.AvailableServices.Count > 0)
+                            {
+                                <button id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover" class="py-2 px-8 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-100 ease-in-out flex flex-row justify-center items-center" type="button">Select option 
+                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                </button>
+                                <div id="dropdownBgHover" class="z-10 hidden w-48 bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                                    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
+                                        @foreach (var service in (ViewBag.AvailableServices as IEnumerable<AvailableService>)!)
+                                        {
+                                            <li>
+                                                <div class="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                    <input id="@service.IdService" type="checkbox" value="@service.IdService" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                                                           @(ViewBag.SelectedServices != null && (ViewBag.SelectedServices).Contains(service.IdService) ? "checked" : "")>
+                                                    <label for="@service.IdService" class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm dark:text-gray-300">@service.ServiceName</label>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <span> : no options available</span>
+                            }
+                            
+                        }
+                        else if (prop.PropertyType == typeof(ICollection<Location>))
+                        {
+                            @if (ViewBag.Locations.Count > 0)
+                            {
+                                <button id="dropdownBgHoverButton" data-dropdown-toggle="dropdownBgHover" class="py-2 px-8 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95  cursor-pointer transition duration-100 ease-in-out flex flex-row justify-center items-center" type="button">
+                                    <span>
+                                        Select option
+                                    </span>
+                                    <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                    </svg>
+                                </button>
+                                
+                                <div id="dropdownBgHover" class="z-10 hidden w-48 bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                                    <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownBgHoverButton">
+                                        @foreach (var location in (ViewBag.Locations as IEnumerable<Location>)!)
+                                        {
+                                            <li>
+                                                <div class="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">
+                                                    <input id="@location.IdLocation" type="checkbox" value="@location.IdLocation" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
+                                                           @(ViewBag.SelectedLocations != null && (ViewBag.SelectedLocations).Contains(location.IdLocation) ? "checked" : "")>
+                                                    <label for="@location.IdLocation" class="w-full ms-2 text-sm font-medium text-gray-900 rounded-sm dark:text-gray-300">@location.LocationName</label>
+                                                </div>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                            else
+                            {
+                                <span> : no options available</span>
+                            }
+                        }
                         else
                         {
                             <input type="text" 
@@ -138,6 +204,8 @@
                         }
                     </div>
                 }
+                
+                
                 
                 <div class="form-control mt-8">
                     <div class="flex gap-4 justify-end">

@@ -1,24 +1,19 @@
+using Heilsunudd.Data.Data.CMS;
+using Heilsunudd.Data.Data.DataContext;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Heilsunudd.Pages;
 
-public class AboutUsModel : PageModel
+public class AboutUsModel(ILogger<AboutUsModel> logger, HeilsunuddDbContext context) : PageModel
 {
-    private readonly ILogger<AboutUsModel> _logger;
+    private readonly ILogger<AboutUsModel> _logger = logger;
+    public IList<AboutUs> AboutUsItems { get; set; } = new List<AboutUs>();
 
-    public AboutUsModel(ILogger<AboutUsModel> logger)
+    public Task OnGetAsync()
     {
-        _logger = logger;
+        AboutUsItems = context.AboutUs.ToList();
+        return Task.CompletedTask;
     }
-
-    public void OnGet()
-    {
-
-    }
-
-        public IActionResult OnGetHello()
-    {
-        return Content("<strong>Hello, htmx!</strong>", "text/html");
-    }
+    
 }

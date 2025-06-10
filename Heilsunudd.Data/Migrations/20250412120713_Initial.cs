@@ -33,7 +33,7 @@ namespace Heilsunudd.Data.Migrations
                 {
                     IdService = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ServiceType = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    ServiceName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     ServiceDuration = table.Column<int>(type: "int", nullable: false),
                     ServicePrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ServiceDescription = table.Column<string>(type: "nvarchar(1200)", maxLength: 1200, nullable: false),

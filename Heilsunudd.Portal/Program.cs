@@ -1,6 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Heilsunudd.Data.Data.DataContext;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<HeilsunuddDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HeilsunuddContext") ?? throw new InvalidOperationException("Connection string 'HeilsunuddContext' not found.")));
 
 
 

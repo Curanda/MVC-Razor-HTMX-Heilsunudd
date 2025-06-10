@@ -10,10 +10,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("b9ce17ca-ae2c-4dc5-8f83-2e4ed563bcf5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50dd4e52e39c51ee4399b2fb63bb1f07d95f97c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+29a7845bf1290132bab07a6dcd34101e18d82483")]
 [assembly: System.Reflection.AssemblyProductAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

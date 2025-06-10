@@ -1,12 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Heilsunudd.Data.Data.Bookings;
 using Heilsunudd.Data.Data.DataContext;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Heilsunudd.Intranet.Controllers
 {
@@ -46,14 +42,23 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: Calendar/Create
         public IActionResult Create()
         {
+            var bookings = _context.Booking.ToList();
+            var locations = _context.Location.ToList();
+            var statuses = _context.Status.ToList();
+            
             var calendar = new Calendar
             {
                 StartTime = DateTime.Now,
                 EndTime = DateTime.Now.AddHours(1),
                 IdBooking = 0,
-                LocationName = string.Empty,
-                StatusName = string.Empty
+                IdLocation = 1,
+                StatusId = 1 
             };
+            
+            ViewData["Booking"] = bookings.ToDictionary(x => x.IdBooking, x => x.IdBooking.ToString());
+            ViewData["Location"] = locations.ToDictionary(x => x.IdLocation, x => x.LocationName);
+            ViewData["Status"] = statuses.ToDictionary(x => x.IdStatus, x => x.StatusName);
+    
             return View(calendar);
         }
 
@@ -62,15 +67,37 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdCalendar,StartTime,EndTime,IdBooking,LocationName,StatusName")] Calendar calendar)
+        public async Task<IActionResult> Create([Bind("StartTime,EndTime,IdBooking,IdLocation,StatusId")] Calendar calendar)
         {
-            if (ModelState.IsValid)
+            
+            foreach (var key in Request.Form.Keys)
             {
-                _context.Add(calendar);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                switch (key)
+                {
+                    case "Booking":
+                        calendar.IdBooking = int.Parse(Request.Form[key]);
+                        break;
+                    case "Location":
+                        calendar.IdLocation = int.Parse(Request.Form[key]);
+                        break;
+                    case "Status":
+                        calendar.StatusId = int.Parse(Request.Form[key]);
+                        break;
+                }
             }
-            return View(calendar);
+
+            var allBookings = await _context.Booking.ToListAsync();
+            var allLocations = await _context.Location.ToListAsync();
+            var allStatuses = await _context.Status.ToListAsync();
+
+            calendar.Booking = allBookings.FirstOrDefault(x => x.IdService == calendar.IdBooking);
+            calendar.Location = allLocations.FirstOrDefault(x => x.IdLocation == calendar.IdLocation);
+            calendar.Status = allStatuses.FirstOrDefault(x => x.IdStatus == calendar.StatusId);
+            
+            if (!ModelState.IsValid) return View(calendar);
+            _context.Add(calendar);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Calendar/Edit/5
@@ -86,6 +113,15 @@ namespace Heilsunudd.Intranet.Controllers
             {
                 return NotFound();
             }
+            
+            var bookings = _context.Booking.ToList();
+            var locations = _context.Location.ToList();
+            var statuses = _context.Status.ToList();
+            
+            ViewData["Booking"] = bookings.ToDictionary(x => x.IdBooking, x => x.IdBooking.ToString());
+            ViewData["Location"] = locations.ToDictionary(x => x.IdLocation, x => x.LocationName);
+            ViewData["Status"] = statuses.ToDictionary(x => x.IdStatus, x => x.StatusName);
+            
             return View(calendar);
         }
 
@@ -94,7 +130,7 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCalendar,StartTime,EndTime,IdBooking,LocationName,StatusName")] Calendar calendar)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCalendar,StartTime,EndTime,IdBooking,IdLocation,StatusId")] Calendar calendar)
         {
             if (id != calendar.IdCalendar)
             {
@@ -103,6 +139,23 @@ namespace Heilsunudd.Intranet.Controllers
             }
 
             if (!ModelState.IsValid) return View(calendar);
+            
+            foreach (var key in Request.Form.Keys)
+            {
+                switch (key)
+                {
+                    case "Booking":
+                        calendar.IdBooking = int.Parse(Request.Form[key]);
+                        break;
+                    case "Location":
+                        calendar.IdLocation = int.Parse(Request.Form[key]);
+                        break;
+                    case "Status":
+                        calendar.StatusId = int.Parse(Request.Form[key]);
+                        break;
+                }
+            }
+            
             try
             {
                 _context.Update(calendar);

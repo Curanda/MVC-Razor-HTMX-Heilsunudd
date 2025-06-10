@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
-[Index(nameof(ServiceType), IsUnique = true)]
+[Index(nameof(ServiceName), IsUnique = true)]
 public class AvailableService
 {
     [Key]
@@ -14,8 +14,8 @@ public class AvailableService
     
     [Required(ErrorMessage = "Please provide service type")]
     [MaxLength(30, ErrorMessage = "Service type can contain up to 30 characters")]
-    [Display(Name = "Service type")]
-    public required string ServiceType { get; set; }
+    [Display(Name = "Service name")]
+    public required string ServiceName { get; set; }
     
     [Required(ErrorMessage = "Please provide service duration")]
     [Range(10, 120, ErrorMessage = "Service duration must be between 10 and 120 minutes")]
@@ -41,4 +41,9 @@ public class AvailableService
     [Required(ErrorMessage = "Please specify if the service is active")]
     [Display(Name = "Is active")]
     public required bool ServiceIsActive { get; set; }
+    
+    [Display(Name = "Available at locations")]
+    public virtual ICollection<Location> Locations { get; set; } = new List<Location>();
 }
+
+

@@ -1,8 +1,8 @@
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Heilsunudd.Data.Data.Bookings;
-
 
 public class Booking
 {
@@ -38,18 +38,18 @@ public class Booking
     [Display(Name = "Email address")]
     public required string Email { get; set; }
     
-    [MaxLength(8, ErrorMessage = "Kennitala can contain up to 8 digits")]
-    [Column(TypeName = "int")]
+    [MaxLength(10, ErrorMessage = "Kennitala can contain up to 10 digits")]
+    [Column(TypeName = "varchar(10)")]
     [Display(Name = "Kennitala")]
-    public int Kennitala { get; set; }
-    
-    [Required(ErrorMessage = "Which service do you want to book?")]
-    [Display(Name = "Service type")]
-    public required string ServiceType { get; set; }
+    public string? Kennitala { get; set; } 
     
 
-    [ForeignKey(nameof(ServiceType))]
-    public AvailableService? Service { get; set; }
+    [ScaffoldColumn(false)]
+    [Browsable(false)]
+    public required int IdService { get; set; }
+    
+    [ForeignKey(nameof(IdService))]
+    public AvailableService? AvailableService { get; set; }
     
     [Required(ErrorMessage = "Please provide booking date")]
     [Display(Name = "Booking date")]
@@ -63,20 +63,20 @@ public class Booking
     [DisplayFormat(DataFormatString = "{0:HH:mm}", ApplyFormatInEditMode = true)]
     public required TimeOnly BookingTime { get; set; }
     
-    [Required(ErrorMessage = "Please provide location")]
-    [Display(Name = "Service location")]
-    public required string LocationName { get; set; }
-    
 
-    [ForeignKey(nameof(LocationName))]
+    [ScaffoldColumn(false)]
+    [Browsable(false)]
+    public required int IdLocation { get; set; }
+    
+    [ForeignKey(nameof(IdLocation))]
     public Location? Location { get; set; }
     
-    [Display(Name = "Booking status")]
-    [Required(ErrorMessage = "Please provide booking status")]
-    public required string BookingStatus { get; set; }
-    
 
-    [ForeignKey(nameof(BookingStatus))]
+    [ScaffoldColumn(false)]
+    [Browsable(false)]
+    public required int IdStatus { get; set; }
+    
+    [ForeignKey(nameof(IdStatus))]
     public Status? Status { get; set; }
     
     [Display(Name = "Created date")]

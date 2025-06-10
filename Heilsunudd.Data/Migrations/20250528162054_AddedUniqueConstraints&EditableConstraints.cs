@@ -41,9 +41,9 @@ namespace Heilsunudd.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_AvailableService_ServiceType",
+                name: "IX_AvailableService_ServiceName",
                 table: "AvailableService",
-                column: "ServiceType",
+                column: "ServiceName",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -77,7 +77,7 @@ namespace Heilsunudd.Data.Migrations
                 table: "BlogCategory");
 
             migrationBuilder.DropIndex(
-                name: "IX_AvailableService_ServiceType",
+                name: "IX_AvailableService_ServiceName",
                 table: "AvailableService");
 
             migrationBuilder.DropIndex(

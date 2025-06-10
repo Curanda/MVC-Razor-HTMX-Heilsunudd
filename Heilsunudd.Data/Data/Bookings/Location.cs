@@ -37,7 +37,7 @@ public class Location
     public required string LocationHouseNumber { get; set; }
     
     [MaxLength(200, ErrorMessage = "Additional information about location cannot be longer than 200 characters")]
-    [Display(Name = "Additional information on how to get to the venue")]
+    [Display(Name = "Additional information")]
     [Column(TypeName = "nvarchar(200)")]
     public string? LocationAdditionalInfo { get; set; }
     
@@ -64,5 +64,8 @@ public class Location
     [Required(ErrorMessage = "You must specify if the location is active")]
     [Column(TypeName = "bit")]
     public required bool LocationIsActive { get; set; }
+    
+    [Display(Name = "Choose services to add to this location")]
+    public virtual ICollection<AvailableService> AvailableServices { get; set; } = new List<AvailableService>();
     
 }

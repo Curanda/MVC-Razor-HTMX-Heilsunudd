@@ -44,17 +44,22 @@ namespace Heilsunudd.Intranet.Controllers
         }
 
         // GET: AvailableService/Create
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             var availableService = new AvailableService
             {
-                ServiceType = string.Empty,
+                ServiceName = string.Empty,
                 ServiceDuration = 0,
                 ServicePrice = 0.0m,
                 ServiceDescription = string.Empty,
                 ServiceImageUrl = string.Empty,
                 ServiceIsActive = true
             };
+            
+            ViewBag.SelectedLocations = new List<int>();
+
+            ViewBag.Locations = await _context.Location.Where(l=>l.LocationIsActive).ToListAsync();
+            
             return View(availableService);
         }
 
@@ -63,14 +68,25 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdService,ServiceType,ServiceDuration,ServicePrice,ServiceDescription,ServiceImageUrl,ServiceIsActive")] AvailableService availableService)
+        public async Task<IActionResult> Create([Bind("IdService,ServiceName,ServiceDuration,ServicePrice,ServiceDescription,ServiceImageUrl,ServiceIsActive")] AvailableService availableService, int[]? selectedLocations)
         {
             if (ModelState.IsValid)
             {
+                if (selectedLocations != null && selectedLocations.Length != 0)
+                {
+                    var locations = await _context.Location.Where(l => selectedLocations.Contains(l.IdLocation)).ToListAsync();
+                    availableService.Locations = locations;
+                }
                 _context.Add(availableService);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
+            
+            ViewBag.SelectedLocations = new List<int>();
+
+            ViewBag.Locations = await _context.Location.Where(l=>l.LocationIsActive).ToListAsync();
+            
             return View(availableService);
         }
 
@@ -82,11 +98,21 @@ namespace Heilsunudd.Intranet.Controllers
                 return NotFound();
             }
 
-            var availableService = await _context.AvailableService.FindAsync(id);
+            var availableService = await _context.AvailableService
+                .Include(s => s.Locations)
+                .FirstOrDefaultAsync(s => s.IdService == id);
+    
             if (availableService == null)
             {
                 return NotFound();
             }
+    
+            ViewBag.Locations = await _context.Location
+                .Where(l => l.LocationIsActive)
+                .ToListAsync();
+            
+            ViewBag.SelectedLocations = availableService.Locations.Select(l => l.IdLocation).ToList();
+    
             return View(availableService);
         }
 
@@ -95,23 +121,27 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdService,ServiceType,ServiceDuration,ServicePrice,ServiceDescription,ServiceImageUrl,ServiceIsActive")] AvailableService availableService)
+        public async Task<IActionResult> Edit(int id, [Bind("IdService,ServiceName,ServiceDuration,ServicePrice,ServiceDescription,ServiceImageUrl,ServiceIsActive")] AvailableService availableService,  int[]? selectedLocations)
         {
             if (id != availableService.IdService)
             {
                 availableService.IdService = id;
-                // return NotFound();
             }
 
             if (!ModelState.IsValid) return View(availableService);
             try
             {
+                if (selectedLocations?.Length != 0)
+                {
+                    availableService.Locations = await _context.Location.Where(l => selectedLocations != null && selectedLocations.Contains(l.IdLocation)).ToListAsync();
+                }
+                
                 _context.Update(availableService);
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AvailableServiceExists(availableService.IdService))
+                if (AvailableServiceExists(availableService.IdService))
                 {
                     return NotFound();
                 }

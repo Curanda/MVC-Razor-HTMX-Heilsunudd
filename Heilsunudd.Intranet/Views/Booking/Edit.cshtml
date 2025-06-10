@@ -1,0 +1,13 @@
+@model Heilsunudd.Data.Data.Bookings.Booking
+
+
+@{
+    ViewData["Title"] = "Booking";
+    ViewData["FormTitle"] = "Edit Booking";
+    ViewData["SubmitText"] = "Submit";
+    ViewData["IdItem"] = Model.IdBooking;
+    ViewData["KeyProp"] = "IdBooking";
+    ViewData["CancelUrl"] = Url.Action("Index");
+}
+
+@await Html.PartialAsync("Partials/_EditHelper", Model)

@@ -22,6 +22,21 @@ namespace Heilsunudd.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AvailableServiceLocation", b =>
+                {
+                    b.Property<int>("AvailableServicesIdService")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocationsIdLocation")
+                        .HasColumnType("int");
+
+                    b.HasKey("AvailableServicesIdService", "LocationsIdLocation");
+
+                    b.HasIndex("LocationsIdLocation");
+
+                    b.ToTable("LocationAvailableServices", (string)null);
+                });
+
             modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.AvailableService", b =>
                 {
                     b.Property<int>("IdService")
@@ -46,20 +61,81 @@ namespace Heilsunudd.Data.Migrations
                     b.Property<bool>("ServiceIsActive")
                         .HasColumnType("bit");
 
-                    b.Property<decimal>("ServicePrice")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("ServiceType")
+                    b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
+                    b.Property<decimal>("ServicePrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.HasKey("IdService");
 
-                    b.HasIndex("ServiceType")
+                    b.HasIndex("ServiceName")
                         .IsUnique();
 
                     b.ToTable("AvailableService");
+                });
+
+            modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Booking", b =>
+                {
+                    b.Property<int>("IdBooking")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdBooking"));
+
+                    b.Property<DateOnly>("BookingDate")
+                        .HasColumnType("date");
+
+                    b.Property<TimeOnly>("BookingTime")
+                        .HasColumnType("time");
+
+                    b.Property<DateOnly>("CreatedDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<int>("IdLocation")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdService")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdStatus")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Kennitala")
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("varchar(30)");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("varchar(15)");
+
+                    b.HasKey("IdBooking");
+
+                    b.HasIndex("IdLocation");
+
+                    b.HasIndex("IdService");
+
+                    b.HasIndex("IdStatus");
+
+                    b.ToTable("Booking");
                 });
 
             modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Calendar", b =>
@@ -76,21 +152,22 @@ namespace Heilsunudd.Data.Migrations
                     b.Property<int>("IdBooking")
                         .HasColumnType("int");
 
-                    b.Property<string>("LocationName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("IdLocation")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("StatusName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
 
                     b.HasKey("IdCalendar");
 
-                    b.HasIndex("LocationName", "StartTime")
-                        .IsUnique();
+                    b.HasIndex("IdBooking");
+
+                    b.HasIndex("IdLocation");
+
+                    b.HasIndex("StatusId");
 
                     b.ToTable("Calendar");
                 });
@@ -307,6 +384,75 @@ namespace Heilsunudd.Data.Migrations
                         .IsUnique();
 
                     b.ToTable("ContactInformation");
+                });
+
+            modelBuilder.Entity("AvailableServiceLocation", b =>
+                {
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.AvailableService", null)
+                        .WithMany()
+                        .HasForeignKey("AvailableServicesIdService")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Location", null)
+                        .WithMany()
+                        .HasForeignKey("LocationsIdLocation")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Booking", b =>
+                {
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("IdLocation")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.AvailableService", "AvailableService")
+                        .WithMany()
+                        .HasForeignKey("IdService")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Status", "Status")
+                        .WithMany()
+                        .HasForeignKey("IdStatus")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AvailableService");
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Status");
+                });
+
+            modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Calendar", b =>
+                {
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Booking", "Booking")
+                        .WithMany()
+                        .HasForeignKey("IdBooking")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("IdLocation")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Status", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Booking");
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("Heilsunudd.Data.Data.CMS.BlogPost", b =>

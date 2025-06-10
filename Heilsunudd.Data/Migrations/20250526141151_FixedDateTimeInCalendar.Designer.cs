@@ -52,7 +52,7 @@ namespace Heilsunudd.Data.Migrations
                     b.Property<decimal>("ServicePrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ServiceType")
+                    b.Property<string>("ServiceName")
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");

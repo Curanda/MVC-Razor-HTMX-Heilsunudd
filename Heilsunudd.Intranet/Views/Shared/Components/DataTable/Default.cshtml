@@ -1,5 +1,6 @@
-@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor
 @model Heilsunudd.Intranet.Views.Shared.Components.DataTableViewModel
+
+
 
 <div class="overflow-x-auto bg-white rounded-xl shadow-lg p-6">
     <div class="flex justify-between items-center mb-4">
@@ -17,20 +18,22 @@
     <table class="table table-zebra">
         <thead>
         <tr>
-            <th class="w-16">#</th>
             @foreach (var prop in Model.Properties)
             {
-                <th>@prop.DisplayName</th>
+                <th>
+                    @foreach (var word in @prop.DisplayName.Split())
+                    {
+                        @word<br/>
+                    }
+                </th>
             }
                 <th class="w-32">Actions</th>
         </tr>
         </thead>
         <tbody>
-        @{int index = 1;}
         @foreach (var item in Model.Data)
         {
             <tr class="hover">
-                <th class="text-center">@index</th>
                 @foreach (var prop in Model.Properties)
                 {
                     <td>
@@ -38,24 +41,53 @@
                             var value = prop.Property.GetValue(item);
                             if (value != null)
                             {
-                                
-                                if (!string.IsNullOrEmpty(prop.FormatString))
+                                switch (value)
                                 {
-                                    @string.Format(prop.FormatString, value)
-                                }
-                                else if (value is DateTime dateValue)
-                                {
-                                    @dateValue.ToString("MM/dd/yyyy")
-                                }
-                                else if (value is bool boolValue)
-                                {
-                                    <span class="badge @(boolValue ? "badge-success" : "badge-error")">
-                                        @(boolValue ? "Yes" : "No")
-                                    </span>
-                                }
-                                else
-                                {
-                                    @value
+                                    case DateTime dateValue:
+                                        @dateValue.ToString("MM/dd/yyyy")
+                                        break;
+                                    case bool boolValue:
+                                        <span class="badge @(boolValue ? "badge-success" : "badge-error")">
+                                            @(boolValue ? "Yes" : "No")
+                                        </span>
+                                        break;
+                                    case string longStringValue:
+                                        if (longStringValue.Length > 14)
+                                        {
+                                            <div data-modal-target="@longStringValue" data-modal-toggle="@longStringValue" class="" type="button">
+                                                @longStringValue[..15]...
+                                            </div>
+                                            
+                                            
+                                            <div id="@longStringValue" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                                <div class="relative p-4 w-full max-w-2xl max-h-full">
+                                                    <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700 min-w-1/2">
+                                                        <div class="flex items-center justify-between p-2 md:p-5 rounded-t dark:border-gray-600 border-gray-200">
+                                            
+                                                            <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-3 h-3 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="@longStringValue">
+                                                                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                            
+                                                        <div class="p-4 md:p-5 space-y-4">
+                                                            <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-wrap">
+                                                                @longStringValue
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            @longStringValue
+                                        }
+                                        break;
+                                    default:
+                                        @value
+                                        break;
                                 }
                             }
                             else
@@ -89,7 +121,6 @@
                         </div>
                 </td>
             </tr>
-            index++;
         }
         </tbody>
     </table>

@@ -101,7 +101,6 @@ namespace Heilsunudd.Intranet.Controllers
             {
                 Console.WriteLine($"Status ID mismatch: {id} != {status.IdStatus}");
                 status.IdStatus = id;
-                return NotFound();
             }
 
             if (!ModelState.IsValid) return View(status);

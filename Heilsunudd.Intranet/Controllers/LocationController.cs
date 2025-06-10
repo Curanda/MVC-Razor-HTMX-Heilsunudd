@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Heilsunudd.Intranet.Data;
 using Heilsunudd.Data.Data.Bookings;
 using Heilsunudd.Data.Data.DataContext;
 
@@ -25,27 +19,9 @@ namespace Heilsunudd.Intranet.Controllers
         {
             return View(await _context.Location.ToListAsync());
         }
-
-        // GET: Location/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var location = await _context.Location
-                .FirstOrDefaultAsync(m => m.IdLocation == id);
-            if (location == null)
-            {
-                return NotFound();
-            }
-
-            return View(location);
-        }
-
-        // GET: Location/Create
-        public IActionResult Create()
+        
+        
+        public async Task<IActionResult> Create()
         {
             var location = new Location
             {
@@ -58,6 +34,14 @@ namespace Heilsunudd.Intranet.Controllers
                 LocationImageUrl = string.Empty,
                 LocationIsActive = true
             };
+
+            ViewBag.SelectedServices = new List<int>();
+            
+            ViewBag.AvailableServices = await _context.AvailableService
+                .Where(s => s.ServiceIsActive)
+                .OrderBy(s => s.ServiceName)
+                .ToListAsync();
+    
             return View(location);
         }
 
@@ -66,63 +50,111 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdLocation,LocationName,LocationTown,LocationStreet,LocationHouseNumber,LocationAdditionalInfo,LocationCoordinates,LocationDescription,LocationImageUrl,LocationIsActive")] Location location)
+        public async Task<IActionResult> Create([Bind("IdLocation,LocationName,LocationTown,LocationStreet,LocationHouseNumber,LocationAdditionalInfo,LocationCoordinates,LocationDescription,LocationImageUrl,LocationIsActive")] Location location, int[]? selectedServices)
         {
             if (ModelState.IsValid)
             {
+                if (selectedServices is { Length: > 0 })
+                {
+                    var services = await _context.AvailableService
+                        .Where(s => selectedServices.Contains(s.IdService))
+                        .ToListAsync();
+            
+                    location.AvailableServices = services;
+                }
+
                 _context.Add(location);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
+            ViewBag.SelectedServices = new List<int>();
+            ViewBag.AvailableServices = await _context.AvailableService
+                .Where(s => s.ServiceIsActive)
+                .OrderBy(s => s.ServiceName)
+                .ToListAsync();
+    
             return View(location);
         }
 
-        // GET: Location/Edit/5
+        
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
-            var location = await _context.Location.FindAsync(id);
-            if (location == null)
-            {
-                return NotFound();
-            }
+            var location = await _context.Location
+                .Include(l => l.AvailableServices)
+                .FirstOrDefaultAsync(l => l.IdLocation == id);
+        
+            if (location == null) return NotFound();
+
+            ViewBag.AvailableServices = await _context.AvailableService
+                .Where(s => s.ServiceIsActive)
+                .OrderBy(s => s.ServiceName)
+                .ToListAsync();
+    
+            ViewBag.SelectedServices = location.AvailableServices.Select(s => s.IdService).ToList();
+    
             return View(location);
         }
-
-        // POST: Location/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdLocation,LocationName,LocationTown,LocationStreet,LocationHouseNumber,LocationAdditionalInfo,LocationCoordinates,LocationDescription,LocationImageUrl,LocationIsActive")] Location location)
+        public async Task<IActionResult> Edit(int id, [Bind("IdLocation,LocationName,LocationTown,LocationStreet,LocationHouseNumber,LocationAdditionalInfo,LocationCoordinates,LocationDescription,LocationImageUrl,LocationIsActive")] Location location, int[]? selectedServices)
         {
             if (id != location.IdLocation)
             {
                 location.IdLocation = id;
-                
-                // return NotFound();
             }
 
-            if (!ModelState.IsValid) return View(location);
-            try
+            if (ModelState.IsValid)
             {
-                _context.Update(location);
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LocationExists(location.IdLocation))
+                try
                 {
-                    return NotFound();
+                    var existingLocation = await _context.Location
+                        .Include(l => l.AvailableServices)
+                        .FirstOrDefaultAsync(l => l.IdLocation == id);
+
+                    if (existingLocation != null)
+                    {
+                        _context.Entry(existingLocation).CurrentValues.SetValues(location);
+                        existingLocation.AvailableServices.Clear();
+                        if (selectedServices is { Length: > 0 })
+                        {
+                            var services = await _context.AvailableService
+                                .Where(s => selectedServices.Contains(s.IdService))
+                                .ToListAsync();
+                            
+                            foreach (var service in services)
+                            {
+                                existingLocation.AvailableServices.Add(service);
+                            }
+                        }
+
+                        await _context.SaveChangesAsync();
+                    }
                 }
-                throw;
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!LocationExists(location.IdLocation))
+                    {
+                        return NotFound();
+                    }
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index));
+            
+            ViewBag.AvailableServices = await _context.AvailableService
+                .Where(s => s.ServiceIsActive)
+                .OrderBy(s => s.ServiceName)
+                .ToListAsync();
+                
+            return View(location);
         }
+
+
 
         // GET: Location/Delete/5
         public async Task<IActionResult> Delete(int? id)
