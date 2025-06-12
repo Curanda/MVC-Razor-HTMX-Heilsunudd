@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Heilsunudd.Data.CustomAttributes;
 using Microsoft.EntityFrameworkCore;
+using Heilsunudd.Data.CustomAttributes;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
@@ -66,6 +68,7 @@ public class Location
     public required bool LocationIsActive { get; set; }
     
     [Display(Name = "Choose services to add to this location")]
-    public virtual ICollection<AvailableService> AvailableServices { get; set; } = new List<AvailableService>();
+    [CheckBoxDisplay("ICollection", "ServiceName","IdService")]
+    public virtual ICollection<Service> Services { get; set; } = new List<Service>();
     
 }

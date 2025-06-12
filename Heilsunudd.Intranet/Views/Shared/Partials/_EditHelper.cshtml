@@ -110,7 +110,7 @@
                             
                             if (viewDataKey == "Service")
                             {
-                                viewDataKey = "AvailableService";
+                                viewDataKey = "Service";
                             }
                             
                             if (ViewData[viewDataKey] is Dictionary<int, string> options)
@@ -125,9 +125,9 @@
                                 </select>
                             }
                         }
-                        else if (prop.PropertyType == typeof(ICollection<AvailableService>))
+                        else if (prop.PropertyType == typeof(ICollection<Service>))
                         {
-                            @if (ViewBag.AvailableServices != null && ((IEnumerable<AvailableService>)ViewBag.AvailableServices).Any())
+                            @if (ViewBag.Services != null && ((IEnumerable<Service>)ViewBag.Services).Any())
                             {
                                 <button id="dropdownServicesButton" data-dropdown-toggle="dropdownServices" class="py-2 px-8 border-2 border-dashed border-gray-600 rounded-md hover:bg-black hover:text-white hover:scale-95 cursor-pointer transition duration-100 ease-in-out flex flex-row justify-center items-center" type="button">
                                     Select Services 
@@ -137,7 +137,7 @@
                                 </button>
                                 <div id="dropdownServices" class="z-10 hidden w-48 bg-white rounded-lg shadow-sm dark:bg-gray-700">
                                     <ul class="p-3 space-y-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownServicesButton">
-                                        @foreach (var service in (ViewBag.AvailableServices as IEnumerable<AvailableService>)!)
+                                        @foreach (var service in (ViewBag.Services as IEnumerable<Service>)!)
                                         {
                                             <li>
                                                 <div class="flex items-center p-2 rounded-sm hover:bg-gray-100 dark:hover:bg-gray-600">

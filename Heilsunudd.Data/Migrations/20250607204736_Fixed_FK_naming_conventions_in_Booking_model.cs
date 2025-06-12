@@ -23,7 +23,7 @@ namespace Heilsunudd.Data.Migrations
                 table: "Booking");
 
             migrationBuilder.RenameColumn(
-                name: "StatusId",
+                name: "IdStatus",
                 table: "Booking",
                 newName: "IdStatus");
 
@@ -56,7 +56,7 @@ namespace Heilsunudd.Data.Migrations
                 name: "FK_Booking_AvailableService_IdService",
                 table: "Booking",
                 column: "IdService",
-                principalTable: "AvailableService",
+                principalTable: "Service",
                 principalColumn: "IdService",
                 onDelete: ReferentialAction.Cascade);
 
@@ -95,7 +95,7 @@ namespace Heilsunudd.Data.Migrations
             migrationBuilder.RenameColumn(
                 name: "IdStatus",
                 table: "Booking",
-                newName: "StatusId");
+                newName: "IdStatus");
 
             migrationBuilder.RenameColumn(
                 name: "IdService",
@@ -126,7 +126,7 @@ namespace Heilsunudd.Data.Migrations
                 name: "FK_Booking_AvailableService_ServiceId",
                 table: "Booking",
                 column: "ServiceId",
-                principalTable: "AvailableService",
+                principalTable: "Service",
                 principalColumn: "IdService",
                 onDelete: ReferentialAction.Cascade);
 
@@ -141,7 +141,7 @@ namespace Heilsunudd.Data.Migrations
             migrationBuilder.AddForeignKey(
                 name: "FK_Booking_Status_StatusId",
                 table: "Booking",
-                column: "StatusId",
+                column: "IdStatus",
                 principalTable: "Status",
                 principalColumn: "IdStatus",
                 onDelete: ReferentialAction.Cascade);

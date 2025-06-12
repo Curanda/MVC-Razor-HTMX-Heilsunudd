@@ -24,7 +24,7 @@ namespace Heilsunudd.Data.Migrations
                     table.ForeignKey(
                         name: "FK_LocationService_AvailableService_IdService",
                         column: x => x.IdService,
-                        principalTable: "AvailableService",
+                        principalTable: "Service",
                         principalColumn: "IdService",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(

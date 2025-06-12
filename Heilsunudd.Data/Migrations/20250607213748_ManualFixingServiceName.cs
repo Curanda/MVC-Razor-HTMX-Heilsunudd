@@ -12,7 +12,7 @@ namespace Heilsunudd.Data.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "ServiceType",
-                table: "AvailableService", 
+                table: "Service", 
                 newName: "ServiceName");
         }
 
@@ -21,7 +21,7 @@ namespace Heilsunudd.Data.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "ServiceName",
-                table: "AvailableService",
+                table: "Service",
                 newName: "ServiceType");
         }
     }

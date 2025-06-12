@@ -12,15 +12,15 @@ namespace Heilsunudd.Data.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_AvailableService_Location_LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.DropIndex(
                 name: "IX_AvailableService_LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.DropColumn(
                 name: "LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.CreateTable(
                 name: "AvailableServiceLocation",
@@ -35,7 +35,7 @@ namespace Heilsunudd.Data.Migrations
                     table.ForeignKey(
                         name: "FK_AvailableServiceLocation_AvailableService_AvailableServicesIdService",
                         column: x => x.AvailableServicesIdService,
-                        principalTable: "AvailableService",
+                        principalTable: "Service",
                         principalColumn: "IdService",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -60,18 +60,18 @@ namespace Heilsunudd.Data.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 type: "int",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AvailableService_LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 column: "LocationIdLocation");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AvailableService_Location_LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 column: "LocationIdLocation",
                 principalTable: "Location",
                 principalColumn: "IdLocation");

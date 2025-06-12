@@ -2,7 +2,7 @@
 @model BookingsModel
 @{
     ViewData["Title"] = "Bookings";
-    var services = ViewData["availableServices"];
+    var services = ViewData["Services"];
     var locations = Model.Locations;
     var defaultLocation = Model.Locations.FirstOrDefault();
 }

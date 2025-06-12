@@ -1,7 +1,0 @@
-@model IEnumerable<Heilsunudd.Data.Data.Bookings.AvailableService>
-
-@{
-    ViewData["Title"] = "Available Services";
-}
-
-@await Component.InvokeAsync("DataTable", new { data = Model, title = "Available Services" })

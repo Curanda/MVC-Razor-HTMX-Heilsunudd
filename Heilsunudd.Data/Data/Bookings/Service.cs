@@ -1,11 +1,12 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Heilsunudd.Data.CustomAttributes;
 using Microsoft.EntityFrameworkCore;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
 [Index(nameof(ServiceName), IsUnique = true)]
-public class AvailableService
+public class Service
 {
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -43,6 +44,7 @@ public class AvailableService
     public required bool ServiceIsActive { get; set; }
     
     [Display(Name = "Available at locations")]
+    [CheckBoxDisplay("ICollection", "LocationName","IdLocation")]
     public virtual ICollection<Location> Locations { get; set; } = new List<Location>();
 }
 

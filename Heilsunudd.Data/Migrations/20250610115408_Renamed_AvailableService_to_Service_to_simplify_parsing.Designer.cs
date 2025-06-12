@@ -4,6 +4,7 @@ using Heilsunudd.Data.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Heilsunudd.Data.Migrations
 {
     [DbContext(typeof(HeilsunuddDbContext))]
-    partial class HeilsunuddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250610115408_Renamed_AvailableService_to_Service_to_simplify_parsing")]
+    partial class Renamed_AvailableService_to_Service_to_simplify_parsing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,11 +103,11 @@ namespace Heilsunudd.Data.Migrations
                     b.Property<int>("IdLocation")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdStatus")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("datetime");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
 
                     b.HasKey("IdCalendar");
 
@@ -112,7 +115,7 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasIndex("IdLocation");
 
-                    b.HasIndex("IdStatus");
+                    b.HasIndex("StatusId");
 
                     b.ToTable("Calendar");
                 });
@@ -212,7 +215,7 @@ namespace Heilsunudd.Data.Migrations
                     b.HasIndex("ServiceName")
                         .IsUnique();
 
-                    b.ToTable("Service");
+                    b.ToTable("AvailableService");
                 });
 
             modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Status", b =>
@@ -373,17 +376,17 @@ namespace Heilsunudd.Data.Migrations
 
             modelBuilder.Entity("LocationService", b =>
                 {
+                    b.Property<int>("AvailableServicesIdService")
+                        .HasColumnType("int");
+
                     b.Property<int>("LocationsIdLocation")
                         .HasColumnType("int");
 
-                    b.Property<int>("ServicesIdService")
-                        .HasColumnType("int");
+                    b.HasKey("AvailableServicesIdService", "LocationsIdLocation");
 
-                    b.HasKey("LocationsIdLocation", "ServicesIdService");
+                    b.HasIndex("LocationsIdLocation");
 
-                    b.HasIndex("ServicesIdService");
-
-                    b.ToTable("LocationServices", (string)null);
+                    b.ToTable("LocationAvailableServices", (string)null);
                 });
 
             modelBuilder.Entity("Heilsunudd.Data.Data.Bookings.Booking", b =>
@@ -394,7 +397,7 @@ namespace Heilsunudd.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Heilsunudd.Data.Data.Bookings.Service", "Service")
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Service", "AvailableService")
                         .WithMany()
                         .HasForeignKey("IdService")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -406,9 +409,9 @@ namespace Heilsunudd.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Location");
+                    b.Navigation("AvailableService");
 
-                    b.Navigation("Service");
+                    b.Navigation("Location");
 
                     b.Navigation("Status");
                 });
@@ -429,7 +432,7 @@ namespace Heilsunudd.Data.Migrations
 
                     b.HasOne("Heilsunudd.Data.Data.Bookings.Status", "Status")
                         .WithMany()
-                        .HasForeignKey("IdStatus")
+                        .HasForeignKey("StatusId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -453,15 +456,15 @@ namespace Heilsunudd.Data.Migrations
 
             modelBuilder.Entity("LocationService", b =>
                 {
-                    b.HasOne("Heilsunudd.Data.Data.Bookings.Location", null)
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Service", null)
                         .WithMany()
-                        .HasForeignKey("LocationsIdLocation")
+                        .HasForeignKey("AvailableServicesIdService")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Heilsunudd.Data.Data.Bookings.Service", null)
+                    b.HasOne("Heilsunudd.Data.Data.Bookings.Location", null)
                         .WithMany()
-                        .HasForeignKey("ServicesIdService")
+                        .HasForeignKey("LocationsIdLocation")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

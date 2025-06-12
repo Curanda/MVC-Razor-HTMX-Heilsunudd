@@ -40,7 +40,7 @@ namespace Heilsunudd.Data.Migrations
                 name: "FK_LocationAvailableServices_AvailableService_AvailableServicesIdService",
                 table: "LocationAvailableServices",
                 column: "AvailableServicesIdService",
-                principalTable: "AvailableService",
+                principalTable: "Service",
                 principalColumn: "IdService",
                 onDelete: ReferentialAction.Cascade);
 
@@ -86,7 +86,7 @@ namespace Heilsunudd.Data.Migrations
                 name: "FK_AvailableServiceLocation_AvailableService_AvailableServicesIdService",
                 table: "AvailableServiceLocation",
                 column: "AvailableServicesIdService",
-                principalTable: "AvailableService",
+                principalTable: "Service",
                 principalColumn: "IdService",
                 onDelete: ReferentialAction.Cascade);
 

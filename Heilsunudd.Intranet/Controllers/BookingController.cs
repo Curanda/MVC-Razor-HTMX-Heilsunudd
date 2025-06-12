@@ -24,7 +24,7 @@ namespace Heilsunudd.Intranet.Controllers
         // GET: Booking/Create
         public IActionResult Create()
         {
-            var services = _context.AvailableService.ToList();
+            var services = _context.Service.ToList();
             var locations = _context.Location.ToList();
             var statuses = _context.Status.ToList();
 
@@ -49,7 +49,7 @@ namespace Heilsunudd.Intranet.Controllers
             // }
 
             // Console.WriteLine();
-            ViewData["AvailableService"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
+            ViewData["Service"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
             ViewData["Location"] = locations.ToDictionary(x => x.IdLocation, x => x.LocationName);
             ViewData["Status"] = statuses.ToDictionary(x => x.IdStatus, x => x.StatusName);
             // ViewBag.CreateParams = new Dictionary<string, int>();
@@ -66,7 +66,7 @@ namespace Heilsunudd.Intranet.Controllers
 
             foreach (var key in Request.Form.Keys)
             {
-                if (key == "AvailableService")
+                if (key == "Service")
                 {
                     booking.IdService = int.Parse(Request.Form[key]);
                 }
@@ -82,11 +82,11 @@ namespace Heilsunudd.Intranet.Controllers
                 }
             }
 
-            var services = await _context.AvailableService.ToListAsync();
+            var services = await _context.Service.ToListAsync();
             var locations = await _context.Location.ToListAsync();
             var statuses = await _context.Status.ToListAsync();
 
-            booking.AvailableService = services.FirstOrDefault(x => x.IdService == booking.IdService);
+            booking.Service = services.FirstOrDefault(x => x.IdService == booking.IdService);
             booking.Location = locations.FirstOrDefault(x => x.IdLocation == booking.IdLocation);
             booking.Status = statuses.FirstOrDefault(x => x.IdStatus == booking.IdStatus);
 
@@ -102,7 +102,7 @@ namespace Heilsunudd.Intranet.Controllers
                 Console.WriteLine($"Inner exception: {ex.InnerException?.Message}");
                 ModelState.AddModelError("", $"Failed to save: {ex.Message}");
 
-                ViewData["AvailableService"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
+                ViewData["Service"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
                 ViewData["Location"] = locations.ToDictionary(x => x.IdLocation, x => x.LocationName);
                 ViewData["Status"] = statuses.ToDictionary(x => x.IdStatus, x => x.StatusName);
                 return View(booking);
@@ -126,11 +126,11 @@ namespace Heilsunudd.Intranet.Controllers
             {
                 return NotFound();
             }
-            var services = _context.AvailableService.ToList();
+            var services = _context.Service.ToList();
             var locations = _context.Location.ToList();
             var statuses = _context.Status.ToList();
             
-            ViewData["AvailableService"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
+            ViewData["Service"] = services.ToDictionary(x => x.IdService, x => x.ServiceName);
             ViewData["Location"] = locations.ToDictionary(x => x.IdLocation, x => x.LocationName);
             ViewData["Status"] = statuses.ToDictionary(x => x.IdStatus, x => x.StatusName);
             
@@ -149,7 +149,7 @@ namespace Heilsunudd.Intranet.Controllers
             
             if (!ModelState.IsValid) 
             {
-                ViewData["AvailableService"] = _context.AvailableService?.ToDictionary(x => x.IdService, x => x.ServiceName) 
+                ViewData["Service"] = _context.Service?.ToDictionary(x => x.IdService, x => x.ServiceName) 
                                       ?? new Dictionary<int, string>();
                 ViewData["Location"] = _context.Location?.ToDictionary(x => x.IdLocation, x => x.LocationName) 
                                        ?? new Dictionary<int, string>();
@@ -162,7 +162,7 @@ namespace Heilsunudd.Intranet.Controllers
             {
                 switch (key)
                 {
-                    case "AvailableService":
+                    case "Service":
                         booking.IdService = int.Parse(Request.Form[key]);
                         break;
                     case "Location":
@@ -201,7 +201,7 @@ namespace Heilsunudd.Intranet.Controllers
             }
 
             var booking = await _context.Booking
-                .Include(b => b.AvailableService)
+                .Include(b => b.Service)
                 .Include(b => b.Location)
                 .Include(b => b.Status)
                 .FirstOrDefaultAsync(m => m.IdBooking == id);

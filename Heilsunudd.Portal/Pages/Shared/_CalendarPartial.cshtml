@@ -1,6 +1,6 @@
-@model (Heilsunudd.Data.Data.Bookings.Location location, Heilsunudd.Data.Data.Bookings.AvailableService service, Heilsunudd.Data.Data.Bookings.Calendar existingBookings)
+@model (Heilsunudd.Data.Data.Bookings.Location, Heilsunudd.Data.Data.Bookings.Service, List<Heilsunudd.Data.Data.Bookings.Calendar>)
 
-<div id="BookingsCardContainer" class="flex flex-row m-2 gap-3">
+<div id="BookingsCardContainer" class="flex flex-row m-2 gap-3 items-center justify-center">
    <div id="datepicker-inline" inline-datepicker data-date="02/25/2024"></div>
    <div class="sm:ms-7 sm:ps-5 sm:border-s border-gray-200 dark:border-gray-800 w-full sm:max-w-[15rem] mt-5 sm:mt-0">
       <h3 class="text-gray-900 dark:text-white text-base font-medium mb-3 text-center">Wednesday 30 June 2024</h3>

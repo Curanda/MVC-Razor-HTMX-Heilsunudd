@@ -15,18 +15,18 @@ namespace Heilsunudd.Data.Migrations
 
             migrationBuilder.AddColumn<int>(
                 name: "LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 type: "int",
                 nullable: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AvailableService_LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 column: "LocationIdLocation");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_AvailableService_Location_LocationIdLocation",
-                table: "AvailableService",
+                table: "Service",
                 column: "LocationIdLocation",
                 principalTable: "Location",
                 principalColumn: "IdLocation");
@@ -37,15 +37,15 @@ namespace Heilsunudd.Data.Migrations
         {
             migrationBuilder.DropForeignKey(
                 name: "FK_AvailableService_Location_LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.DropIndex(
                 name: "IX_AvailableService_LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.DropColumn(
                 name: "LocationIdLocation",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.CreateTable(
                 name: "LocationService",
@@ -61,7 +61,7 @@ namespace Heilsunudd.Data.Migrations
                     table.ForeignKey(
                         name: "FK_LocationService_AvailableService_IdService",
                         column: x => x.IdService,
-                        principalTable: "AvailableService",
+                        principalTable: "Service",
                         principalColumn: "IdService",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(

@@ -11,8 +11,7 @@ public class BookingsModel(ILogger<BookingsModel> logger, HeilsunuddDbContext co
 {
     private readonly ILogger<BookingsModel> _logger = logger;
     public IList<Location> Locations { get;set; } = new List<Location>();
-    public IList<Calendar> CalendarRecords { get;set; } = new List<Calendar>();
-    public IList<AvailableService> AvailableServices { get;set; } = new List<AvailableService>();
+    public IList<Service> Services { get;set; } = new List<Service>();
     public IList<Status> Statuses { get;set; } = new List<Status>();
     public IList<Calendar> ExistingCalendarEntries { get;set; } = new List<Calendar>();
 
@@ -20,7 +19,7 @@ public class BookingsModel(ILogger<BookingsModel> logger, HeilsunuddDbContext co
     public Task OnGetAsync()
     {
         Locations = context.Location
-            .Include(l => l.AvailableServices)
+            .Include(l => l.Services)
             .ToList();
         Statuses = context.Status.ToList();
         return Task.CompletedTask;
@@ -29,7 +28,7 @@ public class BookingsModel(ILogger<BookingsModel> logger, HeilsunuddDbContext co
     public IActionResult OnGetLocationsServices(int id) 
     {
         var location = context.Location
-            .Include(l => l.AvailableServices)
+            .Include(l => l.Services)
             .FirstOrDefault(l => l.IdLocation == id);
         if (location == null) return NotFound();
             
@@ -43,10 +42,10 @@ public class BookingsModel(ILogger<BookingsModel> logger, HeilsunuddDbContext co
         Console.WriteLine($"OnGetCalendar called with LocationId: {IdLocation}, ServiceId: {IdService}");
     
         var location = context.Location
-            .Include(l => l.AvailableServices)
+            .Include(l => l.Services)
             .FirstOrDefault(l => l.IdLocation == IdLocation);
         
-        var service = context.AvailableService
+        var service = context.Service
             .FirstOrDefault(s => s.IdService == IdService);
         
         Console.WriteLine($"Service id: {service.IdService}");

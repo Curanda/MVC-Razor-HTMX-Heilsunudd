@@ -52,7 +52,7 @@ namespace Heilsunudd.Intranet.Controllers
                 EndTime = DateTime.Now.AddHours(1),
                 IdBooking = 0,
                 IdLocation = 1,
-                StatusId = 1 
+                IdStatus = 1 
             };
             
             ViewData["Booking"] = bookings.ToDictionary(x => x.IdBooking, x => x.IdBooking.ToString());
@@ -67,7 +67,7 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StartTime,EndTime,IdBooking,IdLocation,StatusId")] Calendar calendar)
+        public async Task<IActionResult> Create([Bind("StartTime,EndTime,IdBooking,IdLocation,IdStatus")] Calendar calendar)
         {
             
             foreach (var key in Request.Form.Keys)
@@ -81,7 +81,7 @@ namespace Heilsunudd.Intranet.Controllers
                         calendar.IdLocation = int.Parse(Request.Form[key]);
                         break;
                     case "Status":
-                        calendar.StatusId = int.Parse(Request.Form[key]);
+                        calendar.IdStatus = int.Parse(Request.Form[key]);
                         break;
                 }
             }
@@ -92,7 +92,7 @@ namespace Heilsunudd.Intranet.Controllers
 
             calendar.Booking = allBookings.FirstOrDefault(x => x.IdService == calendar.IdBooking);
             calendar.Location = allLocations.FirstOrDefault(x => x.IdLocation == calendar.IdLocation);
-            calendar.Status = allStatuses.FirstOrDefault(x => x.IdStatus == calendar.StatusId);
+            calendar.Status = allStatuses.FirstOrDefault(x => x.IdStatus == calendar.IdStatus);
             
             if (!ModelState.IsValid) return View(calendar);
             _context.Add(calendar);
@@ -130,7 +130,7 @@ namespace Heilsunudd.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdCalendar,StartTime,EndTime,IdBooking,IdLocation,StatusId")] Calendar calendar)
+        public async Task<IActionResult> Edit(int id, [Bind("IdCalendar,StartTime,EndTime,IdBooking,IdLocation,IdStatus")] Calendar calendar)
         {
             if (id != calendar.IdCalendar)
             {
@@ -151,7 +151,7 @@ namespace Heilsunudd.Intranet.Controllers
                         calendar.IdLocation = int.Parse(Request.Form[key]);
                         break;
                     case "Status":
-                        calendar.StatusId = int.Parse(Request.Form[key]);
+                        calendar.IdStatus = int.Parse(Request.Form[key]);
                         break;
                 }
             }

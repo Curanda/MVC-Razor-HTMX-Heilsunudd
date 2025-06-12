@@ -31,7 +31,7 @@ namespace Heilsunudd.Data.Migrations
                 defaultValue: 0);
 
             migrationBuilder.AddColumn<int>(
-                name: "StatusId",
+                name: "IdStatus",
                 table: "Calendar",
                 type: "int",
                 nullable: false,
@@ -61,7 +61,7 @@ namespace Heilsunudd.Data.Migrations
                     table.ForeignKey(
                         name: "FK_Booking_AvailableService_ServiceId",
                         column: x => x.ServiceId,
-                        principalTable: "AvailableService",
+                        principalTable: "Service",
                         principalColumn: "IdService",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -92,7 +92,7 @@ namespace Heilsunudd.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Calendar_StatusId",
                 table: "Calendar",
-                column: "StatusId");
+                column: "IdStatus");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Booking_LocationId",
@@ -107,7 +107,7 @@ namespace Heilsunudd.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Booking_StatusId",
                 table: "Booking",
-                column: "StatusId");
+                column: "IdStatus");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_Calendar_Booking_IdBooking",
@@ -128,7 +128,7 @@ namespace Heilsunudd.Data.Migrations
             migrationBuilder.AddForeignKey(
                 name: "FK_Calendar_Status_StatusId",
                 table: "Calendar",
-                column: "StatusId",
+                column: "IdStatus",
                 principalTable: "Status",
                 principalColumn: "IdStatus",
                 onDelete: ReferentialAction.Restrict);
@@ -169,7 +169,7 @@ namespace Heilsunudd.Data.Migrations
                 table: "Calendar");
 
             migrationBuilder.DropColumn(
-                name: "StatusId",
+                name: "IdStatus",
                 table: "Calendar");
 
             migrationBuilder.AddColumn<string>(

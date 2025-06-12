@@ -37,7 +37,7 @@ namespace Heilsunudd.Intranet.Controllers
 
             ViewBag.SelectedServices = new List<int>();
             
-            ViewBag.AvailableServices = await _context.AvailableService
+            ViewBag.Services = await _context.Service
                 .Where(s => s.ServiceIsActive)
                 .OrderBy(s => s.ServiceName)
                 .ToListAsync();
@@ -54,26 +54,30 @@ namespace Heilsunudd.Intranet.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (selectedServices is { Length: > 0 })
-                {
-                    var services = await _context.AvailableService
-                        .Where(s => selectedServices.Contains(s.IdService))
-                        .ToListAsync();
-            
-                    location.AvailableServices = services;
-                }
-
                 _context.Add(location);
                 await _context.SaveChangesAsync();
+
+                if (selectedServices is not { Length: > 0 }) return RedirectToAction(nameof(Index));
+                var services = await _context.Service
+                    .Where(s => selectedServices.Contains(s.IdService))
+                    .ToListAsync();
+    
+                foreach (var service in services)
+                {
+                    location.Services.Add(service);
+                }
+            
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            
+    
             ViewBag.SelectedServices = new List<int>();
-            ViewBag.AvailableServices = await _context.AvailableService
+            ViewBag.Services = await _context.Service
                 .Where(s => s.ServiceIsActive)
                 .OrderBy(s => s.ServiceName)
                 .ToListAsync();
-    
+
             return View(location);
         }
 
@@ -83,17 +87,17 @@ namespace Heilsunudd.Intranet.Controllers
             if (id == null) return NotFound();
 
             var location = await _context.Location
-                .Include(l => l.AvailableServices)
+                .Include(l => l.Services)
                 .FirstOrDefaultAsync(l => l.IdLocation == id);
         
             if (location == null) return NotFound();
 
-            ViewBag.AvailableServices = await _context.AvailableService
+            ViewBag.Services = await _context.Service
                 .Where(s => s.ServiceIsActive)
                 .OrderBy(s => s.ServiceName)
                 .ToListAsync();
     
-            ViewBag.SelectedServices = location.AvailableServices.Select(s => s.IdService).ToList();
+            ViewBag.SelectedServices = location.Services.Select(s => s.IdService).ToList();
     
             return View(location);
         }
@@ -113,22 +117,22 @@ namespace Heilsunudd.Intranet.Controllers
                 try
                 {
                     var existingLocation = await _context.Location
-                        .Include(l => l.AvailableServices)
+                        .Include(l => l.Services)
                         .FirstOrDefaultAsync(l => l.IdLocation == id);
 
                     if (existingLocation != null)
                     {
                         _context.Entry(existingLocation).CurrentValues.SetValues(location);
-                        existingLocation.AvailableServices.Clear();
+                        existingLocation.Services.Clear();
                         if (selectedServices is { Length: > 0 })
                         {
-                            var services = await _context.AvailableService
+                            var services = await _context.Service
                                 .Where(s => selectedServices.Contains(s.IdService))
                                 .ToListAsync();
                             
                             foreach (var service in services)
                             {
-                                existingLocation.AvailableServices.Add(service);
+                                existingLocation.Services.Add(service);
                             }
                         }
 
@@ -146,7 +150,7 @@ namespace Heilsunudd.Intranet.Controllers
                 return RedirectToAction(nameof(Index));
             }
             
-            ViewBag.AvailableServices = await _context.AvailableService
+            ViewBag.Services = await _context.Service
                 .Where(s => s.ServiceIsActive)
                 .OrderBy(s => s.ServiceName)
                 .ToListAsync();

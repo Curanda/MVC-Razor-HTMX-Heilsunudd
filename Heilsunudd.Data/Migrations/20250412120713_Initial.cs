@@ -28,7 +28,7 @@ namespace Heilsunudd.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AvailableService",
+                name: "Service",
                 columns: table => new
                 {
                     IdService = table.Column<int>(type: "int", nullable: false)
@@ -168,7 +168,7 @@ namespace Heilsunudd.Data.Migrations
                 name: "AboutUs");
 
             migrationBuilder.DropTable(
-                name: "AvailableService");
+                name: "Service");
 
             migrationBuilder.DropTable(
                 name: "BlogPost");

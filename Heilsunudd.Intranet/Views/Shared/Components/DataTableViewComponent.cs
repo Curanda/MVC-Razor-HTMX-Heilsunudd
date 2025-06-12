@@ -1,4 +1,5 @@
 
+using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
@@ -26,7 +27,7 @@ public class DataTableViewComponent : ViewComponent
     private List<PropertyDisplayInfo> GetProperties(Type type)
     {
         return type.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-            .Where(p => p.CanRead && 
+            .Where(p => p.CanRead &&
                         (p.PropertyType.IsValueType || 
                          p.PropertyType == typeof(string) ||
                          Nullable.GetUnderlyingType(p.PropertyType) != null))
@@ -44,6 +45,8 @@ public class DataTableViewComponent : ViewComponent
     {
         return System.Text.RegularExpressions.Regex.Replace(input, "([a-z])([A-Z])", "$1 $2");
     }
+    
+    
 }
 
 public class DataTableViewModel
@@ -57,5 +60,5 @@ public class PropertyDisplayInfo
 {
     public PropertyInfo Property { get; set; }
     public string DisplayName { get; set; }
-    public string FormatString { get; set; }
+    public string? FormatString { get; set; }
 }

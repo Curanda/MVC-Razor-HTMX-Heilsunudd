@@ -42,7 +42,7 @@ namespace Heilsunudd.Data.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_AvailableService_ServiceName",
-                table: "AvailableService",
+                table: "Service",
                 column: "ServiceName",
                 unique: true);
 
@@ -78,7 +78,7 @@ namespace Heilsunudd.Data.Migrations
 
             migrationBuilder.DropIndex(
                 name: "IX_AvailableService_ServiceName",
-                table: "AvailableService");
+                table: "Service");
 
             migrationBuilder.DropIndex(
                 name: "IX_AboutUs_Title",

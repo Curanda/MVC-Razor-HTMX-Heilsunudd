@@ -1,8 +1,8 @@
 @model Heilsunudd.Data.Data.Bookings.Location
 
 @{
-    var locationId = Model.IdLocation;
-    var services = Model.AvailableServices;
+    var IdLocation = Model.IdLocation;
+    var services = Model.Services;
 }
 
 
@@ -19,7 +19,7 @@ else
         <div role="button" id="service-@service.IdService" class="flex flex-row items-center justify-between bg-gray-200 rounded-md p-3 gap-4 hover:bg-[#C1C1C1] hover:text-black hover:scale-99 transition-all duration-300 ease-in"
              hx-target="#BookingsCardContainer"
              hx-swap="innerHTML"
-             hx-get="/Bookings?handler=Calendar&IdLocation=@locationId&IdService=@service.IdService">
+             hx-get="/Bookings?handler=Calendar&IdLocation=@IdLocation&IdService=@service.IdService">
             <div class="flex flex-row items-center justify-start gap-10">
                 <span title="ServiceIcon" class="max-w-1/20 px-4 py-2 text-2xl rounded-md bg-gray-100">@service.ServiceName[..1]</span>
                 <div id="BookingsCardServiceListDetails-@service.IdService" class="flex flex-col gap-3">

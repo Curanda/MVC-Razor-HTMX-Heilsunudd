@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Heilsunudd.Data.CustomAttributes;
 
 namespace Heilsunudd.Data.Data.Bookings;
 
@@ -49,7 +50,8 @@ public class Booking
     public required int IdService { get; set; }
     
     [ForeignKey(nameof(IdService))]
-    public AvailableService? AvailableService { get; set; }
+    [SelectDisplay("Service","ServiceName", "IdService")]
+    public Service? Service { get; set; }
     
     [Required(ErrorMessage = "Please provide booking date")]
     [Display(Name = "Booking date")]
@@ -69,6 +71,7 @@ public class Booking
     public required int IdLocation { get; set; }
     
     [ForeignKey(nameof(IdLocation))]
+    [SelectDisplay("Location","LocationName", "IdLocation")]
     public Location? Location { get; set; }
     
 
@@ -77,6 +80,7 @@ public class Booking
     public required int IdStatus { get; set; }
     
     [ForeignKey(nameof(IdStatus))]
+    [SelectDisplay("Status","StatusName", "IdStatus")]
     public Status? Status { get; set; }
     
     [Display(Name = "Created date")]

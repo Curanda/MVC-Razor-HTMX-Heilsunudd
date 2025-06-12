@@ -4,6 +4,7 @@ using Heilsunudd.Data.Data.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Heilsunudd.Data.Migrations
 {
     [DbContext(typeof(HeilsunuddDbContext))]
-    partial class HeilsunuddDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250612123858_Fixed_Manual_delete_of_LocationService_Junction_Table")]
+    partial class Fixed_Manual_delete_of_LocationService_Junction_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

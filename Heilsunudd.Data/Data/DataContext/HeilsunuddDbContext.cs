@@ -11,7 +11,7 @@ namespace Heilsunudd.Data.Data.DataContext
         }
         public DbSet<Heilsunudd.Data.Data.Bookings.Status> Status { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.Bookings.Location> Location { get; set; } = default!;
-        public DbSet<Heilsunudd.Data.Data.Bookings.AvailableService> AvailableService { get; set; } = default!;
+        public DbSet<Heilsunudd.Data.Data.Bookings.Service> Service { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.Bookings.Calendar> Calendar { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.Bookings.Booking> Booking { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.CMS.AboutUs> AboutUs { get; set; } = default!;
@@ -22,9 +22,9 @@ namespace Heilsunudd.Data.Data.DataContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Location>()
-                .HasMany(l => l.AvailableServices)
+                .HasMany(l => l.Services)
                 .WithMany(s => s.Locations)
-                .UsingEntity(j => j.ToTable("LocationAvailableServices"));
+                .UsingEntity(j => j.ToTable("LocationServices"));
         }
     }
 }
