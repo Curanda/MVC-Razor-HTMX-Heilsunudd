@@ -1,0 +1,32 @@
+@model List<string>
+
+@{
+    var selectedDate = ViewData["selectedDate"];
+}
+
+@foreach (var slot in Model)
+{
+    <li>
+        <input onclick="handleChooseTimeslot('@slot')" type="radio" id="@slot" value="@slot" class="hidden peer" name="timetable">
+        <label for="@slot"
+               style="outline: dotted; outline-offset: 0.1rem;"
+               class="shadow-lg inline-flex items-center justify-center w-full p-1 font-medium text-center text-md bg-white  rounded-lg cursor-pointer text-black   peer-checked:border-white peer-checked:bg-blue-600 peer-checked:text-white transition duration-300 ease-in-out hover:-translate-y-2 ">
+            @slot
+        </label>
+    </li>
+}
+
+<script>
+    let date = "@selectedDate";
+    const modalDate = document.getElementById("modalDate");
+    const modalTimeSlot = document.getElementById("modalTimeSlot");
+    
+    function handleChooseTimeslot(slot) {
+        console.log("handleChooseTimeslot from the partial", slot);
+        modalTimeSlot.setAttribute("value", slot);
+        // document.getElementById("modalDate").setAttribute("value", date);
+        console.log("modalTimeSlot", modalTimeSlot.getAttribute("value").valueOf());
+        console.log("modalDate", document.getElementById("modalDate").getAttribute("value").valueOf());
+    }
+
+</script>

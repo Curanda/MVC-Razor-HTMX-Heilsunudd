@@ -1,0 +1,111 @@
+@model Heilsunudd.Data.Data.Bookings.Booking
+
+<div id="crud-modal" tabindex="-1"  style="background-color: rgba(255, 255, 255, 0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px); padding: 4rem;"  class="p-4 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full backdrop-blur-xs">
+    <div class="relative p-4 w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex flex-col items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200 gap-4">
+                <div class="flex flex-row justify-between items-center w-full">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        Book a massage
+                    </h3>
+                    <button
+
+
+                        id="modalCloseBtn" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="crud-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <div class="flex flex-row items-center justify-between w-full text-sm">
+                    <p>
+                        For date : @Model.BookingDate
+                    </p>
+                    <p>
+                        Hour : @Model.BookingTime
+                    </p>
+                </div>
+
+            </div>
+
+            <form method="post" 
+                  asp-page-handler="BookingForm"
+                  hx-boost="true"
+                  hx-target="#crud-modal"
+                  hx-swap="outerHTML"
+                  class="p-6 md:p-5">
+                <div class="grid gap-4 mb-4 grid-cols-2 p-4">
+                    <div class="col-span-2">
+                        <label asp-for="FirstName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First Name</label>
+                        <input asp-for="FirstName" type="text" class=" shadow-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter first name" required>
+                        <span asp-validation-for="FirstName" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="col-span-2">
+                        <label asp-for="LastName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Last Name</label>
+                        <input asp-for="LastName" type="text" class="shadow-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter last name" required>
+                        <span asp-validation-for="LastName" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="col-span-2">
+                        <label asp-for="PhoneNumber" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+                        <input asp-for="PhoneNumber" type="tel" class="shadow-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter phone number" required>
+                        <span asp-validation-for="PhoneNumber" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="col-span-2">
+                        <label asp-for="Email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <input asp-for="Email" type="email" class="shadow-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter email" required>
+                        <span asp-validation-for="Email" class="text-red-500 text-sm"></span>
+                    </div>
+                    <div class="col-span-2">
+                        <label asp-for="Kennitala" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kennitala</label>
+                        <input asp-for="Kennitala" type="text" class="shadow-lg bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter kennitala" required>
+                        <span asp-validation-for="Kennitala" class="text-red-500 text-sm"></span>
+                    </div>
+
+                    <input asp-for="BookingDate" type="hidden" />
+                    <input asp-for="BookingTime" type="hidden" />
+                    <input asp-for="IdLocation" type="hidden" />
+                    <input asp-for="IdService" type="hidden" />
+                    <input asp-for="IdStatus" type="hidden" />
+                    <input asp-for="CreatedDate" type="hidden" />
+                    
+                    <div class="flex flex-row justify-center items-start w-full py-4">
+                        <button id="submitBookingBtn" type="submit" class="flex flex-row justify-evenly items-center text-md shadow-xl border-2 border-dotted border-black rounded-lg py-2 px-6 cursor-pointer transition duration-300 ease-in-out hover:-translate-y-2 hover:border-[#D2DCE5] active:bg-black active:text-white active:scale-95">
+                            <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                            <p>
+                                Book
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 
+
+<script>
+
+    document.addEventListener('click', function(e) {
+
+            const modal = e.target.closest('[id^="crud-modal"]') || document.querySelector('.crud-modal-active');
+        if (e.target.closest('#modalCloseBtn')) {
+            if (modal) {
+                modal.remove();
+            }
+        }
+    });
+
+    // document.addEventListener('submit', function(e) {
+    //     const submitBtn = e.target.getElementById("submitBookingBtn");
+    //     if (submitBtn) {
+    //         submitBtn.disabled = true;
+    //         setTimeout(() => {
+    //             submitBtn.disabled = false;
+    //         }, 3000);
+    //     }
+    // });
+</script>

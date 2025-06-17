@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pprdQSbdEv1SUqWvhqq9drxIEbIPLswQo8zZlfTI+G8=",
+  "Hash": "HhgnHGCdIebRstlTy5kS2lcCOpe3v7QUmC42AabNus8=",
   "Source": "Heilsunudd.Portal",
   "BasePath": "_content/Heilsunudd.Portal",
   "Mode": "Default",
@@ -206,12 +206,12 @@
       "OriginalItemSpec": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/lib/jquery/LICENSE.txt"
     },
     {
-      "Identity": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz",
+      "Identity": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz",
       "SourceId": "Heilsunudd.Portal",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/",
       "BasePath": "_content/Heilsunudd.Portal",
-      "RelativePath": "css/site#[.{fingerprint=fdnjatni0g}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=x39kr5lhcx}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -220,8 +220,8 @@
       "RelatedAsset": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/css/site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "fhdotbbcfy",
-      "Integrity": "vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ=",
+      "Fingerprint": "coyimg8604",
+      "Integrity": "9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/css/site.css"
@@ -619,8 +619,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "fdnjatni0g",
-      "Integrity": "7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4=",
+      "Fingerprint": "x39kr5lhcx",
+      "Integrity": "HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
@@ -1557,12 +1557,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.010204081633"
+          "Quality": "0.004237288136"
         }
       ],
       "ResponseHeaders": [
@@ -1572,15 +1572,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97"
+          "Value": "235"
         },
         {
           "Name": "ETag",
-          "Value": "\"vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ=\""
+          "Value": "\"9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1600,13 +1600,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4=\""
+          "Value": "W/\"HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4="
+          "Value": "sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="
         }
       ]
     },
@@ -1621,7 +1621,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "87"
+          "Value": "400"
         },
         {
           "Name": "Content-Type",
@@ -1629,11 +1629,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4=\""
+          "Value": "\"HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1643,13 +1643,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4="
+          "Value": "sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1658,7 +1658,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97"
+          "Value": "235"
         },
         {
           "Name": "Content-Type",
@@ -1666,11 +1666,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ=\""
+          "Value": "\"9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1688,18 +1688,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ="
+          "Value": "sha256-9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM="
         }
       ]
     },
     {
-      "Route": "css/site.fdnjatni0g.css",
-      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz",
+      "Route": "css/site.x39kr5lhcx.css",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.010204081633"
+          "Quality": "0.004237288136"
         }
       ],
       "ResponseHeaders": [
@@ -1709,15 +1709,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97"
+          "Value": "235"
         },
         {
           "Name": "ETag",
-          "Value": "\"vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ=\""
+          "Value": "\"9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1737,13 +1737,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4=\""
+          "Value": "W/\"HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fdnjatni0g"
+          "Value": "x39kr5lhcx"
         },
         {
           "Name": "label",
@@ -1751,12 +1751,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4="
+          "Value": "sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="
         }
       ]
     },
     {
-      "Route": "css/site.fdnjatni0g.css",
+      "Route": "css/site.x39kr5lhcx.css",
       "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/css/site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1766,7 +1766,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "87"
+          "Value": "400"
         },
         {
           "Name": "Content-Type",
@@ -1774,11 +1774,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4=\""
+          "Value": "\"HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1788,7 +1788,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fdnjatni0g"
+          "Value": "x39kr5lhcx"
         },
         {
           "Name": "label",
@@ -1796,13 +1796,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-7TSyiVXH/FSO/Q8qztrJ2pgfUZbywBKV2ulUSzg6sN4="
+          "Value": "sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="
         }
       ]
     },
     {
-      "Route": "css/site.fdnjatni0g.css.gz",
-      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz",
+      "Route": "css/site.x39kr5lhcx.css.gz",
+      "AssetFile": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -1811,7 +1811,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "97"
+          "Value": "235"
         },
         {
           "Name": "Content-Type",
@@ -1819,11 +1819,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ=\""
+          "Value": "\"9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 06 Jun 2025 21:14:14 GMT"
+          "Value": "Mon, 16 Jun 2025 13:17:03 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1841,7 +1841,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "fdnjatni0g"
+          "Value": "x39kr5lhcx"
         },
         {
           "Name": "label",
@@ -1849,7 +1849,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-vax6KErEIjzUCRm14kDShDjxvzqAynR/RLyxd5d3JCQ="
+          "Value": "sha256-9Gn2PZGD5V30fWHYIDza1wo2PLVoQdxjsz47EwUbwkM="
         }
       ]
     },
@@ -2772,7 +2772,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2825,7 +2825,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2862,7 +2862,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2909,7 +2909,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2970,7 +2970,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3015,7 +3015,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 17:54:58 GMT"
+          "Value": "Thu, 12 Jun 2025 23:15:21 GMT"
         },
         {
           "Name": "Cache-Control",

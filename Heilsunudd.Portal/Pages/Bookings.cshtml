@@ -9,23 +9,24 @@
 
 <section id="Bookings"
          class="flex flex-row justify-center mx-auto h-3/5 w-3/5">
-        <div class="flex flex-col gap-12 mt-10">
-    @{
-        @foreach (var loc in locations)
-        {
-            <button
-                class="bg-[#D3DDE5] text-white px-6 py-4 rounded-lg rounded-r-none font-inika text-nowrap tracking-widest text-2xl hover:bg-[#C1C1C1] hover:text-black hover:scale-105 transition-all duration-300 ease-in outline-2 outline-offset-2 outline-dotted active:bg-white"
-                id="@loc.IdLocation"
-                hx-target="#BookingsCardContainer"
-                hx-swap="innerHTML"
-                hx-get="/Bookings?handler=LocationsServices&id=@loc.IdLocation">
-                @loc.LocationName
-            </button>
+    <div class="flex flex-col gap-12 mt-10">
+        @{
+            @foreach (var loc in locations)
+            {
+                <button
+                    class="location-btn bg-[#D3DDE5] text-white px-6 py-4 rounded-lg rounded-r-none font-inika text-nowrap tracking-widest text-2xl hover:bg-[#C1C1C1] hover:text-black hover:scale-105 transition-all duration-300 ease-in outline-2 outline-offset-2 outline-dotted active:bg-white"
+                    id="@loc.IdLocation"
+                    onclick="this.addClass('bg-[#C1C1C1]').siblings().removeClass('bg-[#C1C1C1]')"
+                    hx-target="#BookingsCardContainer"
+                    hx-swap="innerHTML"
+                    hx-get="/Bookings?handler=LocationsServices&id=@loc.IdLocation">
+                    @loc.LocationName
+                </button>
+            }
         }
-    }
     
     </div>
-    <div id="BookingsCard" class="w-full h-full bg-gray-50 border-2 border-white mx-auto rounded-lg brightness-75 contrast-200 outline-2 outline-white outline-offset-2 outline-dotted overflow-y-scroll flex flex-col">
+    <div id="BookingsCard" class="w-full bg-gray-50 border-2 border-white mx-auto rounded-lg brightness-75 contrast-200 outline-2 outline-white outline-offset-2 outline-dotted overflow-y-scroll flex flex-col shadow-xl">
         <div id="BookingsCardHeader" class="w-full p-6 bg-white text-xl">Choose massage</div>
         <div id="BookingsCardContainer" class="flex flex-col m-2 gap-3">
             @if (defaultLocation != null)
@@ -37,6 +38,19 @@
                 <p>No locations available</p>
             }
         </div>
-        
     </div>
 </section>
+
+<script>
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('location-btn')) {
+        document.querySelectorAll('.location-btn').forEach(btn => {
+            btn.classList.remove('bg-[#C1C1C1]');
+            btn.classList.add('bg-[#D3DDE5]');
+        });
+        
+        e.target.classList.remove('bg-[#D3DDE5]');
+        e.target.classList.add('bg-[#C1C1C1]');
+    }
+});
+</script>

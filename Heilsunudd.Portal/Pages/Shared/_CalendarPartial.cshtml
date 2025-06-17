@@ -1,123 +1,267 @@
+@using System.Globalization
 @model (Heilsunudd.Data.Data.Bookings.Location, Heilsunudd.Data.Data.Bookings.Service, List<Heilsunudd.Data.Data.Bookings.Calendar>)
 
-<div id="BookingsCardContainer" class="flex flex-row m-2 gap-3 items-center justify-center">
-   <div id="datepicker-inline" inline-datepicker data-date="02/25/2024"></div>
-   <div class="sm:ms-7 sm:ps-5 sm:border-s border-gray-200 dark:border-gray-800 w-full sm:max-w-[15rem] mt-5 sm:mt-0">
-      <h3 class="text-gray-900 dark:text-white text-base font-medium mb-3 text-center">Wednesday 30 June 2024</h3>
-      <button type="button" data-collapse-toggle="timetable" class="inline-flex items-center w-full py-2 px-5 me-2 justify-center text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-         <svg class="w-4 h-4 text-gray-800 dark:text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
-         </svg>
-         Pick a time
-      </button>
-      <label class="sr-only">
-         Pick a time
-      </label>
-      <ul id="timetable" class="grid w-full grid-cols-2 gap-2 mt-5">
-         <li>
-            <input type="radio" id="10-am" value="" class="hidden peer" name="timetable">
-            <label for="10-am"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               10:00 AM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="10-30-am" value="" class="hidden peer" name="timetable">
-            <label for="10-30-am"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               10:30 AM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="11-am" value="" class="hidden peer" name="timetable">
-            <label for="11-am"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               11:00 AM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="11-30-am" value="" class="hidden peer" name="timetable">
-            <label for="11-30-am"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               11:30 AM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="12-am" value="" class="hidden peer" name="timetable" checked>
-            <label for="12-am"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               12:00 AM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="12-30-pm" value="" class="hidden peer" name="timetable">
-            <label for="12-30-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               12:30 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="1-pm" value="" class="hidden peer" name="timetable">
-            <label for="1-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               01:00 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="1-30-pm" value="" class="hidden peer" name="timetable">
-            <label for="1-30-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               01:30 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="2-pm" value="" class="hidden peer" name="timetable">
-            <label for="2-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               02:00 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="2-30-pm" value="" class="hidden peer" name="timetable">
-            <label for="2-30-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               02:30 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="3-pm" value="" class="hidden peer" name="timetable">
-            <label for="3-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               03:00 PM
-            </label>
-         </li>
-         <li>
-            <input type="radio" id="3-30-pm" value="" class="hidden peer" name="timetable">
-            <label for="3-30-pm"
-                   class="inline-flex items-center justify-center w-full p-2 text-sm font-medium text-center bg-white border rounded-lg cursor-pointer text-blue-600 border-blue-600 dark:hover:text-white dark:border-blue-500 dark:peer-checked:border-blue-500 peer-checked:border-blue-600 peer-checked:bg-blue-600 hover:text-white peer-checked:text-white  dark:peer-checked:text-white hover:bg-blue-500 dark:text-blue-500 dark:bg-gray-900 dark:hover:bg-blue-600 dark:hover:border-blue-600 dark:peer-checked:bg-blue-500">
-               03:30 PM
-            </label>
-         </li>
-      </ul>
-   </div>
+@{
+   var dateNow = DateTime.Now.ToString("dd.MM.yyyy", CultureInfo.InvariantCulture);
+
+   var idService = Model.Item2.IdService;
+   var sampleDateFromBackEnd = Model.Item3.FirstOrDefault()?.StartTime.Date.ToShortDateString();
+   var idLocation = Model.Item1.IdLocation;
+   var allSlots = new List<string>()
+   {
+       "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00"
+   };
+}
+
+<div id="BookingsCardContainer" class="flex flex-row m-2 gap-3 items-start justify-evenly">
+    
+    @* Datepicker *@
+    <div class="flex flex-col gap-2">
+        <div id="datepicker-inline" data-date="" style="outline-offset: 0.1rem; outline-width: 0.15rem;" class="outline-4 outline-dotted outline-offset-4 outline-white shadow-md rounded-md"></div>
+
+        <div class="flex flex-row w-full items-center justify-between mt-6">
+            <button id="datepicker-button-today" name="Today" class="text-xl shadow-xl border-4 border-white border-dotted rounded-lg py-3 px-10 cursor-pointer transition duration-300 ease-in-out hover:-translate-y-2 hover:border-[#D2DCE5] active:bg-black active:text-white active:scale-95">Today</button>
+            <button onclick="" id="datepicker-button-clear" name="Clear" class="text-xl shadow-xl border-4 border-white rounded-lg py-3 px-10 cursor-pointer transition duration-300 ease-in-out hover:-translate-y-2 hover:border-[#D2DCE5] active:bg-black active:text-white active:scale-95">Clear</button>
+        </div>
+    </div>
+    @* End of datepicker *@
+
+    <div class="flex flex-col items-start justify-evenly">
+
+        <button
+            hx-target="#BookingsCard"
+            hx-swap="beforeend"
+            hx-get="?handler=BookingModal"
+            hx-vals='js:{
+        "idLocation": @idLocation,
+        "idService": @idService,
+        "selectedDate": document.getElementById("modalDate").value, 
+        "selectedTimeslot": document.getElementById("modalTimeSlot").value
+    }'
+            hx-trigger="click"
+            id="modalBtn" type="button" class="inline-flex items-center w-full py-2 px-5 me-2 justify-center text-lg font-medium text-gray-900 focus:outline-none shadow-xl border-4 border-white rounded-lg cursor-pointer transition duration-300 ease-in-out hover:-translate-y-2 hover:border-[#D2DCE5] active:bg-black active:text-white active:scale-95">
+            <svg class="w-4 h-4 text-gray-800 dark:text-white me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4a1 1 0 1 0-2 0v4a1 1 0 0 0 .293.707l3 3a1 1 0 0 0 1.414-1.414L13 11.586V8Z" clip-rule="evenodd"/>
+            </svg>
+            <input hidden="hidden" type="text" name="date" id="modalDate" value="@dateNow"/>
+            <input hidden="hidden" type="text" name="date" id="modalTimeSlot" value=""/>
+
+            Confirm time slot
+        </button>
+
+        <ul id="timetable" class="grid w-full grid-cols-2 gap-2 mt-5">
+
+            @foreach (var slot in allSlots)
+            {
+                <li>
+                    <input onclick="handleChooseTimeslotOnMount('@slot')" type="radio" id="@slot" value="@slot" class="hidden peer" name="timetable">
+                    <label for="@slot"
+                           style="outline: dotted; outline-offset: 0.1rem;"
+                           class="shadow-lg inline-flex items-center justify-center w-full p-1 font-medium text-center text-md bg-white  rounded-lg cursor-pointer text-black   peer-checked:border-white peer-checked:bg-blue-600 peer-checked:text-white transition duration-300 ease-in-out hover:-translate-y-2 ">
+                        @slot
+                    </label>
+                </li>
+            }
+
+        </ul>
+    </div>
 </div>
 
 <script>
-   (function() {
-       const datepicker = document.getElementById('datepicker-inline');
-       if (datepicker && typeof Datepicker !== 'undefined') {
-           new Datepicker(datepicker, {
-               autohide: true,
-               format: 'mm/dd/yyyy'
-           });
-       }
-       
-       const collapseButton = document.querySelector('[data-collapse-toggle="timetable"]');
-       const timetable = document.getElementById('timetable');
-       if (collapseButton && timetable && typeof Collapse !== 'undefined') {
-           new Collapse(timetable, {
-               triggerEl: collapseButton
-           });
-       }
-   })();
+    function handleChooseTimeslotOnMount(slot) {
+        document.getElementById("modalTimeSlot").setAttribute("value", slot);
+        document.getElementById("modalDate").setAttribute("value", todayString);
+        console.log("handlechoosetimeslotonmount: ",document.getElementById("modalTimeSlot").getAttribute("value").valueOf());
+        console.log("handlechoosetimeslotonmount: ",document.getElementById("modalDate").getAttribute("value").valueOf());
+        
+    }
+
+    // (function() {
+    const datepicker = document.getElementById('datepicker-inline');
+    const datePickerBtnToday = document.getElementById('datepicker-button-today');
+    const datePickerBtnClear = document.getElementById('datepicker-button-clear');
+    const todayString = new Date().toLocaleDateString('de-DE');
+    let selectedDate = datepicker.getAttribute('data-date');
+    
+    let datepickerInstance = null;
+
+    if (datepicker && typeof Datepicker !== 'undefined') {
+        datepicker.setAttribute('data-date', todayString);
+        
+        datepickerInstance = new Datepicker(datepicker, {
+            format: 'dd.mm.yyyy',
+            // buttony ponizej nie dzialaja w partialach stad customowe buttony.
+            todayBtn: false,
+            clearBtn: false,
+            inline: true,
+            
+        });
+
+        datepicker.addEventListener('changeDate', function(event) {
+            if (event.detail.date) {
+                datepicker.setAttribute('data-date', event.detail.date);
+                selectedDate = new Date(event.detail.date).toLocaleDateString('de-DE', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric'
+                });
+                console.log(selectedDate);
+                
+                document.getElementById('modalDate').setAttribute("value", selectedDate);
+                document.getElementById("modalTimeSlot").setAttribute("value", "");
+
+                const url = `?handler=Timeslots&IdLocation=${@idLocation}&selectedDate=${selectedDate}`;
+
+                htmx.ajax('GET', url, {
+                    target: '#timetable',
+                    swap: 'innerHTML'
+                });
+                
+                console.log(url);
+            }
+        });
+    }
+    
+
+    if (datePickerBtnToday && datepicker) {
+        datePickerBtnToday.addEventListener('click', function() {
+            
+            datepicker.setAttribute('data-date', todayString);
+            
+            if (datepickerInstance) {
+                datepickerInstance.destroy();
+            }
+            datepickerInstance = new Datepicker(datepicker, {
+                autohide: true,
+                format: 'dd.mm.yyyy',
+                todayBtn: false,
+                clearBtn: false,
+                inline: true
+            });
+
+            document.getElementById('modalDate').setAttribute("value", todayString);
+            document.getElementById("modalTimeSlot").setAttribute("value", "");
+
+            datepicker.addEventListener('changeDate', function(event) {
+                if (event.detail.date) {
+                    datepicker.setAttribute('data-date', event.detail.date);
+                    selectedDate = new Date(event.detail.date).toLocaleDateString('de-DE', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric'
+                    });
+                    console.log(selectedDate);
+
+                    
+
+                    const url = `?handler=Timeslots&IdLocation=${@idLocation}&selectedDate=${selectedDate}`;
+
+                    htmx.ajax('GET', url, {
+                        target: '#timetable',
+                        swap: 'innerHTML'
+                    });
+                }
+            });
+            
+        });
+    }
+    
+    if (datePickerBtnClear && datepicker) {
+        datePickerBtnClear.addEventListener('click', function() {
+            datepicker.removeAttribute('data-date');
+
+            if (datepickerInstance) {
+                datepickerInstance.destroy();
+            }
+            datepickerInstance = new Datepicker(datepicker, {
+                autohide: true,
+                format: 'dd.mm.yyyy',
+                todayBtn: false,
+                clearBtn: false,
+                inline: true,
+            });
+
+            document.getElementById('modalDate').setAttribute("value", "");
+
+
+
+            datepicker.addEventListener('changeDate', function(event) {
+                if (event.detail.date) {
+                    datepicker.setAttribute('data-date', event.detail.date);
+                    selectedDate = new Date(event.detail.date).toLocaleDateString('de-DE', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric'
+                    });
+                    console.log(selectedDate);
+
+                    document.getElementById('modalDate').setAttribute("value", selectedDate);
+                    document.getElementById("modalTimeSlot").setAttribute("value", "");
+
+                    const url = `?handler=Timeslots&IdLocation=${@idLocation}&selectedDate=${selectedDate}`;
+
+                    htmx.ajax('GET', url, {
+                        target: '#timetable',
+                        swap: 'innerHTML'
+                    });
+                }
+            });
+        });
+    }
+    
+        ///  MODAL CONTROL ////
+    //     const modalTrigger = document.getElementById('modalBtn');
+    //     const modal = document.getElementById('crud-modal');
+    //     const modalCloseBtn = document.getElementById('modalCloseBtn');
+    //     const bookingsEl = document.getElementById('Bookings');
+    //    
+    //
+    //
+    //        
+    //     if (modal) {
+    //     modalTrigger.addEventListener('click', function() {
+    //         const timeSlotProp = document.getElementById("modalTimeSlot").getAttribute("value").valueOf();
+    //         if (timeSlotProp === ""){
+    //             alert("Please choose a time slot");
+    //             return;
+    //         }
+    //         modal.classList.remove('hidden');
+    //         modal.classList.add('flex');
+    //         document.body.classList.add('modal-open');
+    //     });
+    //    
+    // }
+    //
+    //     if (modalCloseBtn && modal) {
+    //     modalCloseBtn.addEventListener('click', function() {
+    //         modal.classList.add('hidden');
+    //         modal.classList.remove('flex');
+    //         document.body.classList.remove('modal-open');
+    //     });
+    // }
+    //
+    //     if (modal) {
+    //     modal.addEventListener('click', function(e) {
+    //         if (e.target === modal) {
+    //             modal.classList.add('hidden');
+    //             modal.classList.remove('flex');
+    //             document.body.classList.remove('modal-open');
+    //         }
+    //     });
+    // }
+
+    // TImeslot handling
+    document.getElementById('modalBtn').addEventListener('click', function() {
+        const timeSlot = document.getElementById("modalTimeSlot").value;
+        const date = document.getElementById("modalDate").value;
+        console.log("Sending - Date:", date, "TimeSlot:", timeSlot);
+
+        if (!timeSlot) {
+            alert("No time slot selected!");
+            return false;
+        }
+    });
+
+        
+// })();
 </script>

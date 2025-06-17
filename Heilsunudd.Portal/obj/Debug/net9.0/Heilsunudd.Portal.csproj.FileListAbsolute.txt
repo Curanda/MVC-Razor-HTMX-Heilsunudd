@@ -155,7 +155,6 @@
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/scopedcss/bundle/Heilsunudd.Portal.styles.css
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/scopedcss/projectbundle/Heilsunudd.Portal.bundle.scp.css
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/tm9yw1tste-ul6tphfgld.gz
-/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-fdnjatni0g.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/06wle7c6ta-61n19gt1b8.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/m1nce2xo81-xtxxf3hu2r.gz
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/ya3ms603g7-47otxtyo56.gz
@@ -194,3 +193,4 @@
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/Heilsunudd.Portal.pdb
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/Heilsunudd.Portal.genruntimeconfig.cache
 /Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/ref/Heilsunudd.Portal.dll
+/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/obj/Debug/net9.0/compressed/g6p4opfj8k-x39kr5lhcx.gz
