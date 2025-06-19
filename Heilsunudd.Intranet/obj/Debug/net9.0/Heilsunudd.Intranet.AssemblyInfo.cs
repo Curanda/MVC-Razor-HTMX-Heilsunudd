@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Heilsunudd.Intranet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d07b3d3a0b17a365f8e6a0f82ca8842bd0947775")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd8843d9eda8d43be5a45375ab42f829b39933e6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Heilsunudd.Intranet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Heilsunudd.Intranet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

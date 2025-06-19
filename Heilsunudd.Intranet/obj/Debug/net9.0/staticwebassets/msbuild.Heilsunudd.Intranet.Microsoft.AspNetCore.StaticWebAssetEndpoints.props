@@ -52,13 +52,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Heilsunudd.Intranet.e0g7sioz3t.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1108"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 13:00:33 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1108"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Jun 2025 00:29:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Heilsunudd.Intranet/Heilsunudd.Intranet.e0g7sioz3t.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Heilsunudd.Intranet.e0g7sioz3t.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"e0g7sioz3t"},{"Name":"integrity","Value":"sha256-Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs="},{"Name":"label","Value":"_content/Heilsunudd.Intranet/Heilsunudd.Intranet.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1108"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 12 Jun 2025 13:00:33 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1108"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Mk9ambTWsV2yfwIuDbRRUKEt2IYVTLSv9zQXX6LHMrs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 19 Jun 2025 00:29:40 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Heilsunudd.Intranet/js/site.fr7q2aak1r.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

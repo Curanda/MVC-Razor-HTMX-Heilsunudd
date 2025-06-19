@@ -18,6 +18,7 @@ namespace Heilsunudd.Data.Data.DataContext
         public DbSet<Heilsunudd.Data.Data.CMS.BlogPost> BlogPost { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.CMS.BlogCategory> BlogCategory { get; set; } = default!;
         public DbSet<Heilsunudd.Data.Data.CMS.ContactInformation> ContactInformation { get; set; } = default!;
+        public DbSet<Heilsunudd.Data.Data.CMS.CustomMessage> CustomMessage { get; set; } = default!;
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
