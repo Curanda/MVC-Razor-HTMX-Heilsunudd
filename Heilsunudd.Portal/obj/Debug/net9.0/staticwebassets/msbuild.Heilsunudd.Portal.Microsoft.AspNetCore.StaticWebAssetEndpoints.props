@@ -12,17 +12,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ul6tphfgld"},{"Name":"integrity","Value":"sha256-Tqy2mhLUr1TJkaM\u002BTn\u002BX0WkaH6AxACHZUEkQZissTMU="},{"Name":"label","Value":"_content/Heilsunudd.Portal/css/output.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"42689"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Tqy2mhLUr1TJkaM\u002BTn\u002BX0WkaH6AxACHZUEkQZissTMU=\u0022"},{"Name":"Last-Modified","Value":"Tue, 08 Apr 2025 14:14:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/css/site.3z8tahqkh9.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3z8tahqkh9"},{"Name":"integrity","Value":"sha256-r6ATrAs\u002BfWIVy5S61NwxYDPs1jG58Z0lt2ZeKRwdXNI="},{"Name":"label","Value":"_content/Heilsunudd.Portal/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"385"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022r6ATrAs\u002BfWIVy5S61NwxYDPs1jG58Z0lt2ZeKRwdXNI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Jun 2025 00:35:04 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"400"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 13:17:03 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/css/site.x39kr5lhcx.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x39kr5lhcx"},{"Name":"integrity","Value":"sha256-HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc="},{"Name":"label","Value":"_content/Heilsunudd.Portal/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"400"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022HSrm0r23ekNNjmeEsORgmuU4HT1dsGS6wfQPwsztPxc=\u0022"},{"Name":"Last-Modified","Value":"Mon, 16 Jun 2025 13:17:03 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-r6ATrAs\u002BfWIVy5S61NwxYDPs1jG58Z0lt2ZeKRwdXNI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"385"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022r6ATrAs\u002BfWIVy5S61NwxYDPs1jG58Z0lt2ZeKRwdXNI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 20 Jun 2025 00:35:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
@@ -359,6 +359,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Wjt0Pb0KuNi6ivGytU83V1fN6ML6ZP4ZunnUE40coAU="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1287008"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Wjt0Pb0KuNi6ivGytU83V1fN6ML6ZP4ZunnUE40coAU=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Feb 2025 16:45:15 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/public/NATIONPD.TTF">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\public\NATIONPD.TTF'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gNRJai7Uv4bW4i/nQm4VpDsaaYpajmA7zJ/vEzwrcNA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"96032"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022gNRJai7Uv4bW4i/nQm4VpDsaaYpajmA7zJ/vEzwrcNA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 13 Mar 2010 02:56:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/public/NATIONPD.wgiktphdhn.TTF">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\public\NATIONPD.TTF'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wgiktphdhn"},{"Name":"integrity","Value":"sha256-gNRJai7Uv4bW4i/nQm4VpDsaaYpajmA7zJ/vEzwrcNA="},{"Name":"label","Value":"_content/Heilsunudd.Portal/public/NATIONPD.TTF"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"96032"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022gNRJai7Uv4bW4i/nQm4VpDsaaYpajmA7zJ/vEzwrcNA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 13 Mar 2010 02:56:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Heilsunudd.Portal/public/spinner.568rj9wz25.svg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\public\spinner.svg'))</AssetFile>

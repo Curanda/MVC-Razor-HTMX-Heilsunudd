@@ -1,0 +1,129 @@
+@page
+@using Heilsunudd.Data.Data.CMS
+@model Heilsunudd.Pages.Blog
+
+@{
+    ViewData["Title"] = "Blog";
+
+    var samplePost = Model.BlogPosts.FirstOrDefault();
+}
+
+<section id="Blog" class="flex flex-col items-center justify-between mx-auto gap-10 h-3/5 w-full">
+   <div class="flex flex-row items-center justify-center gap-4 text-black">
+      <span class="text-lg font-inika">●</span>
+      <h1 class="text-4xl font-inika">Blog</h1>
+      <span class="text-lg font-inika">●</span>
+   </div>
+   
+   @* <form class="max-w-md mx-auto w-full"> *@
+   @*    <label for="blog-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label> *@
+   @*    <div class="relative"> *@
+   @*       <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"> *@
+   @*          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20"> *@
+   @*             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/> *@
+   @*          </svg> *@
+   @*       </div> *@
+   @*       <input type="search"  *@
+   @*              id="blog-search"  *@
+   @*              name="searchTerm" *@
+   @*              hx-get="/Blog?handler=SearchBlogPosts"  *@
+   @*              hx-trigger="keyup changed delay:300ms"  *@
+   @*              hx-target="#searchResults"  *@
+   @*              hx-indicator="#search-spinner" *@
+   @*              class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"  *@
+   @*              placeholder="Search blog posts..." /> *@
+   @*        *@
+   @*       <!-- Loading spinner --> *@
+   @*       <div id="search-spinner" class="htmx-indicator absolute end-2.5 bottom-2.5"> *@
+   @*          <svg class="animate-spin h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"> *@
+   @*             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle> *@
+   @*             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path> *@
+   @*          </svg> *@
+   @*       </div> *@
+   @*    </div> *@
+   @* </form> *@
+   @* *@
+   @* <!-- Search Results Container --> *@
+   @* <div id="searchResults" class="w-full max-w-4xl"></div> *@
+   
+   <div class="flex flex-row justify-evenly gap-50 max-h-full m-auto">
+      
+
+         <div  id="blogPost" style="border: dotted; border-color: gray; width: 60rem;" class="h-full flex-8/12 sm:ml-64 p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700">
+            <div class="grid grid-cols-3 gap-4 mb-4">
+               <div class="flex items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-gray-800">
+                  <h1 id="blogPostCategory">@samplePost?.BlogCategory?.CategoryName</h1>
+               </div>
+               <div class="flex items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-gray-800">
+                  <p id="blogPostTitle" class="text-2xl text-gray-400 dark:text-gray-500 px-4 flex text-center">
+                     @samplePost?.Title
+                  </p>
+               </div>
+               <ul id="blogPostTagList" class="flex flex-row items-center justify-center h-24 rounded-sm bg-gray-50 dark:bg-gray-800 flex-wrap">
+                  @foreach (var tag in Model.GetTags(samplePost))
+                  {
+                     <li>#@tag</li>
+                     <span>&nbsp;&nbsp; </span>
+                  }
+               </ul>
+            </div>
+            <div class="flex flex-col py-4 px-4 items-center justify-center max-h-fit mb-4 rounded-sm bg-gray-50 dark:bg-gray-800 gap-2">
+               <p class="mb-3 text-lg text-gray-500 md:text-xl dark:text-gray-400">@samplePost?.Content</p>
+               <p class="text-gray-500 dark:text-gray-400">Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, </p>
+               <p>Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+         </div>
+      
+
+      <div id="blogCategorySidebar" class="w-vw h-vh">
+         <aside id="sidebar-multi-level-sidebar" style="border: dotted; border-color: #C1C1C1" class="w-full h-full p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700" aria-label="Sidebar">
+            <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 rounded-lg">
+               
+               <form class="max-w-md mx-auto"
+                     hx-get="/Blog?handler=SearchBlogPosts"
+                     hx-target="#searchResults"
+                     hx-swap="innerHTML">   
+                  <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                  <div class="relative">
+                     <input type="search" name="searchTerm" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-gray-800" placeholder="Search posts" required />
+                     <button type="submit" class="text-black absolute end-2.5 bottom-2.5 border-2 border-dashed bg-white hover:-translate-y-1 transition duration-300 ease-in-out  font-medium rounded-lg text-sm px-4 py-2">
+                        <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                        </svg>
+                     </button>
+                  </div>
+               </form>
+               
+               <ul class="max-w-full h-fit mt-4" id="searchResults">
+               </ul>
+               
+               <hr class="my-4 text-gray-300"/>
+               <p class="flex justify-center items-center py-4 text-xl font-dotted">Categories</p>
+               <ul id="blogCategoryList" class="space-y-2 font-medium">
+                  @foreach (var cat in Model.BlogCategories)
+                  {
+                     <li>
+                        <button type="button" class="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700" aria-controls="dropdown-@cat.CategoryName" data-collapse-toggle="dropdown-@cat.CategoryName">
+                           ★
+                           <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">@cat.CategoryName</span>
+                           <svg class="w-3 h-3 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                           </svg>
+                        </button>
+                        <ul id="dropdown-@cat.CategoryName" class="hidden py-2 space-y-2">
+                           @foreach (var post in cat.BlogPosts)
+                           {
+                              <li>
+                                 <a hx-target="#blogPost" hx-swap="innerHtml" hx-get="/Blog?handler=ChosenBlogPost&id=@post.IdBlogPost" class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">@post.Title</a>
+                              </li>
+                              // Console.WriteLine(post.Title);
+                           }
+                        </ul>
+                     </li>
+                  }
+               </ul>
+            </div>
+         </aside>
+      </div>
+   </div>
+</section>

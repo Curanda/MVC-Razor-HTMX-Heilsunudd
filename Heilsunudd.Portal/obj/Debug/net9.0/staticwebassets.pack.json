@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets/lib/jquery/dist/jquery.slim.min.map"
     },
     {
+      "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/NATIONPD.TTF",
+      "PackagePath": "staticwebassets/public/NATIONPD.TTF"
+    },
+    {
       "Id": "/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/wwwroot/public/bg2.png",
       "PackagePath": "staticwebassets/public/bg2.png"
     },

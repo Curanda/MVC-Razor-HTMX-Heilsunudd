@@ -155,6 +155,15 @@ public class BookingsModel(ILogger<BookingsModel> logger, HeilsunuddDbContext co
         
         context.Booking.Add(booking);
         await context.SaveChangesAsync();
+        
+        var location = await context.Location.FirstOrDefaultAsync(l => l.IdLocation == booking.IdLocation);
+        var service = await context.Service.FirstOrDefaultAsync(s => s.IdService == booking.IdService);
+        var price = await context.Service.FirstOrDefaultAsync(s => s.IdService == booking.IdService);
+        
+        TempData["locationName"] = location?.LocationName;
+        TempData["serviceName"] = service?.ServiceName;
+        TempData["servicePrice"] = price?.ServicePrice;
+        
         return Partial("_BookingSuccessfulModal", booking);
     }
 

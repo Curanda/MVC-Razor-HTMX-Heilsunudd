@@ -45,12 +45,6 @@ public class BlogPost
     [ForeignKey(nameof(IdBlogCategory))]
     public BlogCategory? BlogCategory { get; set; }
     
-    // [Required(ErrorMessage = "Category is required")]
-    // [Display(Name = "Category")]
-    // [ForeignKey("BlogCategory.CategoryName")]
-    // [MaxLength(50, ErrorMessage = "Category name can contain up to 50 characters")]
-    // public required string CategoryName { get; set; }
-    
     [Required(ErrorMessage = "Provide at least 2 tags separated by coma")]
     [MaxLength(100, ErrorMessage = "Tags can contain up to 100 characters")]
     [Display(Name = "Tags")]

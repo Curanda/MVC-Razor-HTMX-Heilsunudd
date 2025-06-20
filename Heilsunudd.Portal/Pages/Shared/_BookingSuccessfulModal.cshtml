@@ -1,5 +1,11 @@
 @model Heilsunudd.Data.Data.Bookings.Booking
 
+@{
+    var location = TempData["locationName"];
+    var service = TempData["serviceName"];
+    var price = TempData["servicePrice"];
+}
+
 <div id="crud-modal" tabindex="-1"  style="background-color: rgba(255, 255, 255, 0.4);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); padding: 4rem;"  class="p-4 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full backdrop-blur-xs">
@@ -37,15 +43,15 @@
                 </div>
                 <div class="flex flex-col pt-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">At location:</dt>
-                    <dd class="text-lg font-semibold">@Model.Location?.LocationName</dd>
+                    <dd class="text-lg font-semibold">@location</dd>
                 </div>
                 <div class="flex flex-col pb-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Booked service : </dt>
-                    <dd class="text-lg font-semibold">@Model.Service?.ServiceName</dd>
+                    <dd class="text-lg font-semibold">@service</dd>
                 </div>
                 <div class="flex flex-col py-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Price : </dt>
-                    <dd class="text-lg font-semibold">@Model.Service?.ServicePrice</dd>
+                    <dd class="text-lg font-semibold">@price</dd>
                 </div>
                 <div class="flex flex-col pt-3">
                     <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Name on the booking : </dt>

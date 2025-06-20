@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd8843d9eda8d43be5a45375ab42f829b39933e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+873c31625dd6cfe4a92be437da02e3831041651f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Heilsunudd.Portal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

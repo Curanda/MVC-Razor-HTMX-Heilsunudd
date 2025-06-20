@@ -32,6 +32,10 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWJvdXRVcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Pages/Blog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQmxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Pages/Bookings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQm9va2luZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -50,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Pages/Shared/_BlogPostPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19CbG9nUG9zdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/mac/RiderProjects/MVC-HTMX/Heilsunudd.Portal/Pages/Shared/_BookingModal.cshtml]
